@@ -1,11 +1,11 @@
-import hero_image from './hero.png';
+import hero_image from './hero-image.png';
 import hero_swag from './hero-swag.jpg';
-import icon_aboutme from './icon-aboutme.png';
-import icon_home from './icon-home.png';
-import icon_projects from './icon-projects.png';
+import icon_aboutme from './icon-aboutme.svg';
+import icon_home from './icon-home.svg';
+import icon_projects from './icon-projects.svg';
 import menu_burger from './menu-burger.png';
 import menu_close from './menu-close.png';
-import logo_portfolio from './logo-portfolio.png';
+import logo_portfolio from './logo-portfolio.svg';
 
 export const assets = {
   hero_image,
