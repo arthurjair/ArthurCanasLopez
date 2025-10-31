@@ -6,6 +6,7 @@ import icon_projects from './icon-projects.svg';
 import menu_burger from './menu-burger.png';
 import menu_close from './menu-close.png';
 import logo_portfolio from './logo-portfolio.svg';
+import background from './background.png';
 
 export const assets = {
   hero_image,
@@ -16,6 +17,7 @@ export const assets = {
   menu_burger,
   menu_close,
   logo_portfolio,
+  background,
 };
 
 export const workData = [
