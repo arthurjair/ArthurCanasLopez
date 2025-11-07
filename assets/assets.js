@@ -8,6 +8,9 @@ import menu_close from './menu-close.png';
 import logo_portfolio from './logo-portfolio.svg';
 import background from './background.png';
 
+import work_boroughs from './work-boroughs.jpg';
+
+
 export const assets = {
   hero_image,
   hero_swag,
@@ -18,23 +21,25 @@ export const assets = {
   menu_close,
   logo_portfolio,
   background,
+  work_boroughs,
+  
 };
 
 export const workData = [
   {
     title: 'HeyYou',
-    image: './work-heyyou.png',
+    image: './public/work-heyyou.jpg',
   },
     {   
     title: 'Boroughs',
-    image: './work-boroughs.jpg',
+    image: './public/work-boroughs.jpg',
   },
   {
     title: 'Vanderlande Trend App',
-    image: './work-vanderlande.jpg',
+    image: './public/work-vanderlande.jpg',
   },
   {
     title: 'Liliana Erasmus',
-    image: './work-liliana.jpg',
+    image: './public/work-liliana.jpg',
   },
 ];

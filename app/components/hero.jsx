@@ -14,16 +14,16 @@ const HeaderSection = () => {
   };
 
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full h-screen min-h-[70vh] md:h-screen">
        
 
       {/* Blue container (now wraps nav + content) */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="min-w-[95vw] min-h-[90vh]  bg-blue-600 rounded-lg p-1  ">
+      <div className="relative z-20 flex items-center justify-center py-12 md:py-0">
+        <div className="min-w-[95vw] min-h-[90vh]  bg-blue-600 rounded-lg border-2 border-black-700 p-1 mt-5">
 
 
           {/* Navbar inside the container */}
-          <nav className="w-full px-2  flex items-center justify-between ">
+          <nav className="w-full px-4  flex items-center justify-between ">
             <a href="/">
               <Image
                 src={assets.logo_portfolio}
@@ -150,8 +150,8 @@ const HeaderSection = () => {
           </ul>
 
           {/* Hero content */}
-          <h1 className="text-6xl md:text-8xl mb-3 font-inter text-white flex justify-center">
-            WHAT'S GOOD!
+          <h1 className="text-6xl md:text-[6.5vw] font-figtree font-weight-bolder text-[#F7FD06] [-webkit-text-stroke:1.5px_#000000] flex justify-center">
+            WHAT'S <br />GOOD!
           </h1>
 
           <div className="my-4 flex justify-center ">
@@ -162,8 +162,8 @@ const HeaderSection = () => {
               height={400}
               className="object-contain"
             />
-            <h2 className="text-lg md:text-5xl font-inter text-white mt-2 flex text-center w-75 text-colo">
-            My name is Arthur and I create stuff
+            <h2 className="text-lg md:text-[3vw] font-figtree font-weight-bolder text-[#FF0000] [-webkit-text-stroke:1.5px_#FFFFFF] mt-2 flex text-center w-75">
+            My name is ARTHUR and I create stuff
           </h2>
           </div>
 

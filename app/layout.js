@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const figtree = Figtree({
   
-  subsets: ["latin"], weight: ['700'],
+  subsets: ["latin"], weight: ['700','800'],
 });
 
 const inter = Inter({
