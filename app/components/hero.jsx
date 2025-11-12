@@ -19,7 +19,7 @@ const HeaderSection = () => {
 
       {/* Blue container (now wraps nav + content) */}
       <div className="relative z-20 flex items-center justify-center py-12 md:py-0">
-        <div className="min-w-[95vw] min-h-[90vh]  bg-blue-600 rounded-lg border-2 border-black-700 p-1 mt-5">
+        <div className="min-w-[95vw] max-h-[90vh]  bg-blue-600 rounded-lg border-2 border-black-700 p-1 mt-5">
 
 
           {/* Navbar inside the container */}

@@ -19,8 +19,10 @@ const Recentworks = () => {
              <li>Visual Storytelling</li>
             </ul>
 
+            <h2 className=" text-center mb-2 text-4xl md:text-[2.5vw] font-figtree font-weight-bolder text-[#F7FD06] py-10">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
 
-            <span className="font-semibold uppercase text-4xl md:text-9xl text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-4 bg-[#FFF200]">
+
+            <span className="font-semibold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-4 bg-[#FFF200]">
                 RECENT WORK$
                </span>
           <HorizontalScrollCarousel />
