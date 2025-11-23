@@ -7,7 +7,8 @@ import menu_burger from './menu-burger.png';
 import menu_close from './menu-close.png';
 import logo_portfolio from './logo-portfolio.svg';
 import background from './background.png';
-
+import chat from './chat.svg';
+import goldfishes from './goldfishes.svg';
 import work_boroughs from './work-boroughs.jpg';
 
 
@@ -22,7 +23,8 @@ export const assets = {
   logo_portfolio,
   background,
   work_boroughs,
-  
+  chat,
+  goldfishes,  
 };
 
 export const workData = [

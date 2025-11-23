@@ -26,7 +26,7 @@ const Recentworks = () => {
                 RECENT WORK$
                </span>
           <HorizontalScrollCarousel />
-          <div className="flex h-48 items-center justify-center">
+          <div className="flex h-20 items-center justify-center">
                
           </div>      
        </div>
@@ -45,7 +45,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-90%"]);
+  const x = useTransform(scrollYProgress, [0, 1],  ["1%", "-50%"]);
 
   return (
     <section ref={targetRef} className="relative h-[400vh] ">
@@ -75,11 +75,7 @@ const Card = ({ card }) => {
           priority={false}
         />
       </div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
+      
     </div>
   );
 };
@@ -91,7 +87,5 @@ const cards = [
   { url: '/work-boroughs.jpg',        title: 'Title 2', id: 2 }, // using your imported assets object (works if assets.work_boroughs is an imported image)
   { url: '/work-vanderlande.jpg',     title: 'Title 3', id: 3 },
   { url: '/work-liliana.jpg',         title: 'Title 4', id: 4 },
-  { url: '/work-abstract-5.jpg',      title: 'Title 5', id: 5 },
-  { url: '/work-abstract-6.jpg',      title: 'Title 6', id: 6 },
-  { url: '/work-abstract-7.jpg',      title: 'Title 7', id: 7 },
+  
 ];

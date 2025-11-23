@@ -1,44 +1,115 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { assets } from '@/assets/assets'
 
-export default function Skills() {
+const EmailButton = () => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('arthur2004jair@gmail.com')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy')
+    }
+  }
+
   return (
-    <section className="">
-        <div className="relative flex items-center justify-center ">
+    <div className="relative flex flex-col items-center justify-center pb-10">
+      <p>TAP TO COPY!</p>
+      <div className="relative inline-block">
+        {/* Black bottom layer – offset */}
+        <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-3xl bg-black md:-translate-x-2.5 md:translate-y-3.5" />
 
-           <div className="w-full max-w-[95vw] bg-[#AC09C9] rounded-lg border-2 border-black-700 ">
-              <div className="flex ">
-                <img src="" alt="GoldFish" />
-                 <h2 className="text-4xl font-bold text-white"> LET'S CHAT</h2>
-                 <img src="" alt="Cat" />
-              </div>
-            </div>
+        {/* White top layer – clickable */}
+        <button
+          onClick={handleCopy}
+          className="relative block rounded-3xl bg-white px-8 py-5 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 md:px-10 md:py-6 md:text-5xl"
+        >
+          {copied ? 'Copied!' : 'arthur2004jair@gmail.com'}
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default function Footer() {
+  return (
+    <section>
+      <div className="relative flex items-center justify-center ">
+        <div className="w-full max-w-[95vw] bg-[#AC09C9] rounded-lg border-2 border-black-700 ">
+          <div className="flex relative p-20 lg:pb-10 lg:pt-40 justify-center items-center gap-4">
+            {/* give explicit width/height to Image */}
+            <Image
+              className="absolute z-0 left-10 lg:left-10"
+              src={assets.goldfishes}
+              alt="GoldFish"
+              width={400}
+              height={200}
+            />
+            <h1 className=" text-2xl lg:text-[12vw]  font-bold text-[#F7FD06] [-webkit-text-stroke:2.5px_#000] z-2">
+              LET'S CHAT
+            </h1>
+            <Image
+              className="absolute z-1 right-10 lg:right-0"
+              src={assets.chat}
+              alt="Cat"
+              width={500}
+              height={240}
+            />
+          </div>
+
+          <div className="relative flex flex-col items-center justify-center pb-10">
+            <EmailButton />
+          </div>
         </div>
+      </div>
 
-        <div className="relative flex items-center justify-center ">
-
-           <div className="w-full max-w-[95vw] bg-[#15E70D] rounded-lg border-2 border-black-700 mb-5">
-              
-                <ul className='flex pt-2 pb-2 '>
-                    <div className='flex flex-row gap-4 pl-5 '>
-                     <li className="text-lg text-white"><a href ="https://www.instagram.com/arthurcanaslopez/" className='inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out' target="_blank">INSTA</a></li>
-                     <li className="text-lg text-white"><a href="https://www.linkedin.com/in/arthur-cañas-11271b328" className='inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out' target="_blank">LINKEDIN</a></li>
-                     <li className="text-lg text-white"><a href="https://pin.it/2RArftI6v" className='inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out' target="_blank">PINTEREST</a></li>
-                    </div>
-
-                    <li className='ml-auto pr-5'>
-                        <p className="text-lg text-white ">
-                         Collaboration With <span className='underline'>Cua Studio</span>
-                        </p>
-
-                    </li>
-                    
-
-                </ul>
-
-                
-              
+      <div className="relative flex items-center justify-center ">
+        <div className="w-full max-w-[95vw] bg-[#15E70D] rounded-lg border-2 border-black-700 mb-5">
+          <ul className="flex pt-2 pb-2 ">
+            <div className="flex flex-row gap-4 pl-5 ">
+              <li className="text-lg text-white">
+                <a
+                  href="https://www.instagram.com/arthurcanaslopez/"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  INSTA
+                </a>
+              </li>
+              <li className="text-lg text-white">
+                <a
+                  href="https://www.linkedin.com/in/arthur-cañas-11271b328"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LINKEDIN
+                </a>
+              </li>
+              <li className="text-lg text-white">
+                <a
+                  href="https://pin.it/2RArftI6v"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  PINTEREST
+                </a>
+              </li>
             </div>
+
+            <li className="ml-auto pr-5">
+              <p className="text-2xl md:text-1xl text-white ">
+                Collaboration With <span className="underline">Cua Studio</span>
+              </p>
+            </li>
+          </ul>
         </div>
+      </div>
     </section>
-  );
+  )
 }
