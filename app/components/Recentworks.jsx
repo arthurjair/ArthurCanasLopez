@@ -9,7 +9,7 @@ const Recentworks = () => {
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
      <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 p-">
-          <h1 className="text-center mb-2 text-4xl md:text-[3.5vw] font-figtree font-weight-bolder text-[#FF0000] [-webkit-text-stroke:2.5px_#FFFFFF] py-10">My bag consists of:</h1>
+          <h1 className="text-center mb-2 text-4xl md:text-[3.5vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2.5px_#FFFFFF] py-10">My bag consists of:</h1>
           <ul className="text-white text-2xl md:text-[3vw] font-inter font-medium flex flex-col items-center gap-4">
              <li>Digital Design</li>
              <li>Web Design</li>
@@ -22,7 +22,7 @@ const Recentworks = () => {
             <h2 className=" text-center mb-2 text-4xl md:text-[2.5vw] font-figtree font-weight-bolder text-[#F7FD06] py-10">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
 
 
-            <span className="font-semibold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-4 bg-[#FFF200]">
+            <span className="font-bold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-4 bg-[#FFF200]">
                 RECENT WORK$
                </span>
           <HorizontalScrollCarousel />

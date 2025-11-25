@@ -25,7 +25,7 @@ const HeaderSection = () => {
               height={400}
               className="object-contain"
             />
-            <h2 className="text-lg md:text-[3vw] font-figtree font-weight-bolder text-[#FF0000] [-webkit-text-stroke:1.5px_#FFFFFF] mt-2 flex text-center w-75">
+            <h2 className="text-lg lg:text-[3vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:1.5px_#FFFFFF] mt-2 flex text-center w-75">
               My name is ARTHUR and I create stuff
             </h2>
           </div>

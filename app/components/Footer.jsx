@@ -17,17 +17,21 @@ const EmailButton = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center pb-10">
-      <p>TAP TO COPY!</p>
+      <button
+          onClick={handleCopy}
+          className="relative block rounded-full bg-[#F7FD06] px-4 py-2 text-center font-extrabold text-[#FF0000] transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 lg:px-9 lg:py-2 lg:text-2xl mb-4"
+        >
+          {copied ? 'Copied to Cliboard!' : 'TAP TO COPY!'}
+        </button>
       <div className="relative inline-block">
         {/* Black bottom layer – offset */}
-        <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-3xl bg-black md:-translate-x-2.5 md:translate-y-3.5" />
+        <div className="absolute inset-0 translate-x-1 translate-y-1 rounded-2xl bg-black md:-translate-x-2.5 md:translate-y-3.5" />
 
         {/* White top layer – clickable */}
         <button
           onClick={handleCopy}
-          className="relative block rounded-3xl bg-white px-8 py-5 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 md:px-10 md:py-6 md:text-5xl"
-        >
-          {copied ? 'Copied!' : 'arthur2004jair@gmail.com'}
+          className="relative block rounded-2xl bg-white px-8 py-5 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 md:px-10 md:py-6 md:text-5xl">
+          <h1>arthur2004jair@gmail.com</h1>
         </button>
       </div>
     </div>
@@ -38,7 +42,7 @@ export default function Footer() {
   return (
     <section>
       <div className="relative flex items-center justify-center ">
-        <div className="w-full max-w-[95vw] bg-[#AC09C9] rounded-lg border-2 border-black-700 ">
+        <div className="w-full max-w-[95vw] bg-[#AC09C9] rounded-md border-2 border-black-700 ">
           <div className="flex relative p-20 lg:pb-10 lg:pt-40 justify-center items-center gap-4">
             {/* give explicit width/height to Image */}
             <Image
@@ -70,7 +74,7 @@ export default function Footer() {
         <div className="w-full max-w-[95vw] bg-[#15E70D] rounded-lg border-2 border-black-700 mb-5">
           <ul className="flex pt-2 pb-2 ">
             <div className="flex flex-row gap-4 pl-5 ">
-              <li className="text-lg text-white">
+              <li className="text-xl text-white">
                 <a
                   href="https://www.instagram.com/arthurcanaslopez/"
                   className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
@@ -80,7 +84,7 @@ export default function Footer() {
                   INSTA
                 </a>
               </li>
-              <li className="text-lg text-white">
+              <li className="text-xl text-white">
                 <a
                   href="https://www.linkedin.com/in/arthur-cañas-11271b328"
                   className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
@@ -90,7 +94,7 @@ export default function Footer() {
                   LINKEDIN
                 </a>
               </li>
-              <li className="text-lg text-white">
+              <li className="text-xl text-white">
                 <a
                   href="https://pin.it/2RArftI6v"
                   className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
