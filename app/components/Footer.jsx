@@ -9,7 +9,7 @@ const EmailButton = () => {
     try {
       await navigator.clipboard.writeText('arthur2004jair@gmail.com')
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setTimeout(() => setCopied(false), 2500)
     } catch (err) {
       console.error('Failed to copy')
     }
@@ -21,7 +21,7 @@ const EmailButton = () => {
           onClick={handleCopy}
           className="relative block rounded-full bg-[#F7FD06] px-4 py-2 text-center font-extrabold text-[#FF0000] transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 lg:px-9 lg:py-2 lg:text-2xl mb-4"
         >
-          {copied ? 'Copied to Cliboard!' : 'TAP TO COPY!'}
+          {copied ? 'Copied to Clipboard!' : 'TAP TO COPY!'}
         </button>
       <div className="relative inline-block">
         {/* Black bottom layer – offset */}
@@ -43,7 +43,7 @@ export default function Footer() {
     <section>
       <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-[#AC09C9] rounded-md border-2 border-black-700 ">
-          <div className="flex relative p-20 lg:pb-10 lg:pt-40 justify-center items-center gap-4">
+          <div className="flex relative p-20 lg:pb-15 lg:pt-30 justify-center items-center gap-4">
             {/* give explicit width/height to Image */}
             <Image
               className="absolute z-0 left-10 lg:left-10"
@@ -52,9 +52,9 @@ export default function Footer() {
               width={400}
               height={200}
             />
-            <h1 className=" text-2xl lg:text-[12vw]  font-bold text-[#F7FD06] [-webkit-text-stroke:2.5px_#000] z-2">
+            <h1 className=" text-2xl lg:text-[12vw]  font-bold text-[#F7FD06] [-webkit-text-stroke:4px_#000] z-2 scale-y-150">
               LET'S CHAT
-            </h1>
+            </h1> 
             <Image
               className="absolute z-1 right-10 lg:right-0"
               src={assets.chat}
@@ -77,7 +77,7 @@ export default function Footer() {
               <li className="text-xl text-white">
                 <a
                   href="https://www.instagram.com/arthurcanaslopez/"
-                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out   text-[#F7FD06]"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -87,7 +87,7 @@ export default function Footer() {
               <li className="text-xl text-white">
                 <a
                   href="https://www.linkedin.com/in/arthur-cañas-11271b328"
-                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out text-[#F7FD06]"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -97,7 +97,7 @@ export default function Footer() {
               <li className="text-xl text-white">
                 <a
                   href="https://pin.it/2RArftI6v"
-                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out"
+                  className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out text-[#F7FD06]"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -107,7 +107,7 @@ export default function Footer() {
             </div>
 
             <li className="ml-auto pr-5">
-              <p className="text-2xl md:text-1xl text-white ">
+              <p className="text-2xl md:text-1xl text-[#F7FD06] ">
                 Collaboration With <span className="underline">Cua Studio</span>
               </p>
             </li>
