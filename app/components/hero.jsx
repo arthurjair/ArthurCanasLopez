@@ -29,11 +29,11 @@ const HeaderSection = () => {
               <h1 className="text-6xl lg:text-[8.5vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2px_#000000] ">
                  WHAT'S <br />GOOD!
                </h1>
-              <h2 className="text-lg lg:text-[3.5vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] mt-2 flex  ">
-                My name is ARTHUR and I create stuff
+              <h2 className="text-lg lg:text-[3.5vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] mt-2 mb-2 flex  ">
+                My name is ARTHUR and I create stuff.
               </h2>
-              <p className="  text-lg lg:text-2xl font-inter text-white/90   ">
-                Check out my work!
+              <p className="  text-lg lg:text-3xl font-inter font-black text-[#15E70D] [-webkit-text-stroke:1px_#AC09C9] ">
+                Check out my work below!
               </p>
             </div>
 
