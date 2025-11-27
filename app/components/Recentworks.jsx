@@ -28,7 +28,7 @@ const Recentworks = () => {
   return (
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
       <div className="relative flex items-center justify-center ">
-        <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 p-">
+        <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 ">
           <h1 className="text-center mb-2 text-4xl md:text-[3vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] py-10">My bag consists of:</h1>
           <ul className="text-[#F7FD06] [-webkit-text-stroke:2px_#000000] text-2xl lg:text-7xl font-inter font-extrabold flex flex-col items-center gap-6">
             <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
@@ -36,9 +36,9 @@ const Recentworks = () => {
               <Image
                 src={assets.works_digitaldesign}
                 alt="Digital Design"
-                width={175}
+                width={165}
                 height={80}
-                className="pointer-events-none absolute -left-2 top-1/4 -translate-y-1/2"
+                className="pointer-events-none absolute -left-0 top-1/4 -translate-y-1/2"
               />
             </li>
 
@@ -114,7 +114,7 @@ const Recentworks = () => {
           </div>
 
 
-          <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-15 bg-[#FFF200] scale-y-150">
+          <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] scale-y-150">
             RECENT WORK$
           </span>
           <HorizontalScrollCarousel />
@@ -140,11 +140,11 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-30%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] ">
-      <div className="sticky top-20 flex overflow-hidden">
+    <section ref={targetRef} className="relative h-[200vh] ">
+      <div className="sticky top-25 flex overflow-hidden">
         <motion.div style={{ x }} className="flex gap-2">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
@@ -159,9 +159,9 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg"
+      className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg "
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 ">
         <Image
           src={card.url}               // can be a string like '/work-heyyou.png' (public/) or an imported image object (assets.someImage)
           alt={card.title}

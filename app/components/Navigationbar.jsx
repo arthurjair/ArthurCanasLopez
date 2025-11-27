@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 
 const Navigationbar = ({ isInline = false }) => {
   const sidemenuRef = useRef();
+  const [scrolled, setScrolled] = useState(false);
 
   const openMenu = () => {
     if (sidemenuRef.current) sidemenuRef.current.style.transform = "translateX(-16rem)";
@@ -13,28 +14,44 @@ const Navigationbar = ({ isInline = false }) => {
     if (sidemenuRef.current) sidemenuRef.current.style.transform = "translateX(16rem)";
   };
 
+  // listen to scroll and toggle a small move-up class
+  useEffect(() => {
+    let raf = null;
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      const shouldBeScrolled = y > 8; // tweak threshold
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setScrolled(shouldBeScrolled));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   // when isInline is true we want the nav fixed but constrained to the centered container
   const navClass = isInline
-    ? "fixed top-6 left-1/2 transform -translate-x-1/2 w-11/11 max-w-9xl z-50"
-    : "fixed w-full z-50";
+    ? `fixed left-1/2 transform -translate-x-1/2 w-11/12 max-w-7xl z-50 transition-all duration-200 ${scrolled ? "top-0" : "top-8"}`
+    : `fixed w-full z-50 transition-transform duration-200 ${scrolled ? "-translate-y-6" : "translate-y-0"}`;
 
   return (
     <>
       <nav className={navClass}>
-        <div className="mx-auto w-11/12 flex items-center justify-between">
+        <div className="mx-full w-10/10 flex items-center justify-between">
           {/* logo (left) */}
           <a href="/">
             <Image
               src={assets.logo_portfolio}
               alt="Logo"
-              width={50}
+              width={30}
               height={32}
               className="w-[8vw] cursor-pointer mr-14"
             />
           </a>
 
           {/* nav items (right) */}
-          <ul className="hidden md:flex items-center gap-6 lg:gap-8 py-3">
+          <ul className="hidden md:flex items-center  lg:gap-8 py-3">
             {/* HOME */}
             <li className="relative overflow-visible">
               <a
