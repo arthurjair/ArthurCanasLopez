@@ -1,14 +1,33 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { assets } from '@/assets/assets'
 
 
 
 const Recentworks = () => {
+  useEffect(() => {
+    const eyes = document.getElementsByClassName("eye");
+    const handleMouseMove = (event) => {
+      for (let eye of eyes) {
+        const rect = eye.getBoundingClientRect();
+        const eyeX = rect.left + rect.width / 2;
+        const eyeY = rect.top + rect.height / 2;
+        const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX) + 180;
+        const rotation = (angle * 180) / Math.PI + 90;
+        eye.style.transform = `rotate(${rotation}deg)`;
+      }
+    }
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, []);
+
+
   return (
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
-     <div className="relative flex items-center justify-center ">
+      <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 p-">
           <h1 className="text-center mb-2 text-4xl md:text-[3vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] py-10">My bag consists of:</h1>
           <ul className="text-[#F7FD06] [-webkit-text-stroke:2px_#000000] text-2xl lg:text-7xl font-inter font-extrabold flex flex-col items-center gap-6">
@@ -48,11 +67,34 @@ const Recentworks = () => {
             <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
               <span className="text-center">Graphic Interaction</span>
               <Image
-                src={assets.works_graphicinteraction}
+                src={assets.eye}
                 alt="Graphic Interaction"
-                width={200}
+                width={140}
                 height={80}
-                className="pointer-events-none absolute -right-10 top-1/5 -translate-y-1/2"
+
+                className=" eye pointer-events-none absolute -right-27 top-1/4 -translate-y-1/2"
+              /><Image
+                src={assets.eye}
+                alt="Graphic Interaction"
+                width={140}
+                height={80}
+
+                className=" eye pointer-events-none absolute -right-5 top-1/4 -translate-y-1/2"
+              />
+              <Image
+                src={assets.eye}
+                alt="Graphic Interaction"
+                width={140}
+                height={80}
+
+                className=" eye pointer-events-none absolute -right-27 top-1/4 -translate-y-1/2"
+              />
+              <Image
+                src={assets.eye}
+                alt="Graphic Interaction"
+                width={140}
+                height={80}
+                className=" eye pointer-events-none absolute -right-5 top-1/4 -translate-y-1/2"
               />
             </li>
 
@@ -67,27 +109,30 @@ const Recentworks = () => {
               />
             </li>
           </ul>
-            <div className="mt-10 mb-10 px-5 flex justify-center">
-              <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
-            </div>
+          <div className="mt-10 mb-10 px-5 flex justify-center">
+            <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
+          </div>
 
 
-            <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-15 bg-[#FFF200] scale-y-150">
-                RECENT WORK$
-               </span>
+          <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-15 bg-[#FFF200] scale-y-150">
+            RECENT WORK$
+          </span>
           <HorizontalScrollCarousel />
           <div className="flex h-20 items-center justify-center">
-               
-          </div>      
-       </div>
-       
 
-     </div>
-     </section>
+          </div>
+        </div>
 
-    
+
+      </div>
+    </section>
+
+
   )
 }
+
+
+
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
@@ -95,7 +140,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1],  ["1%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
 
   return (
     <section ref={targetRef} className="relative h-[400vh] ">
@@ -125,7 +170,7 @@ const Card = ({ card }) => {
           priority={false}
         />
       </div>
-      
+
     </div>
   );
 };
@@ -133,9 +178,9 @@ const Card = ({ card }) => {
 export default Recentworks
 
 const cards = [
-  { url: '/work-heyyou.svg',          title: 'Title 1', id: 1 }, // file in public/
-  { url: '/work-boroughs.jpg',        title: 'Title 2', id: 2 }, // using your imported assets object (works if assets.work_boroughs is an imported image)
-  { url: '/work-vanderlande.jpg',     title: 'Title 3', id: 3 },
-  { url: '/work-liliana.jpg',         title: 'Title 4', id: 4 },
-  
+  { url: '/work-heyyou.svg', title: 'Title 1', id: 1 }, // file in public/
+  { url: '/work-boroughs.jpg', title: 'Title 2', id: 2 }, // using your imported assets object (works if assets.work_boroughs is an imported image)
+  { url: '/work-vanderlande.jpg', title: 'Title 3', id: 3 },
+  { url: '/work-liliana.jpg', title: 'Title 4', id: 4 },
+
 ];

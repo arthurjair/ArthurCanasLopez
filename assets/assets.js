@@ -15,7 +15,7 @@ import works_direction from './works-direction.svg';
 import works_graphicinteraction from './works-graphicinteraction.svg';
 import works_webdesign from './works-webdesign.svg';
 import works_storytelling from './works-storytelling.svg';
-
+import eye from './eye.svg';
 
 export const assets = {
   hero_image,
@@ -35,6 +35,7 @@ export const assets = {
   works_graphicinteraction,
   works_webdesign,
   works_storytelling,
+  eye,
 };
 
 export const workData = [
