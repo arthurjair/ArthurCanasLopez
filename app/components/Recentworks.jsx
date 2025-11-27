@@ -1,6 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { assets } from '@/assets/assets'
 
 
 
@@ -9,20 +10,69 @@ const Recentworks = () => {
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
      <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 p-">
-          <h1 className="text-center mb-2 text-4xl md:text-[3.5vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2.5px_#FFFFFF] py-10">My bag consists of:</h1>
-          <ul className="text-white text-2xl md:text-[3vw] font-inter font-medium flex flex-col items-center gap-4">
-             <li>Digital Design</li>
-             <li>Web Design</li>
-             <li>Digital Design</li>
-             <li>Direction & Vision</li>
-             <li>Graphic Interaction</li>
-             <li>Visual Storytelling</li>
-            </ul>
+          <h1 className="text-center mb-2 text-4xl md:text-[3vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] py-10">My bag consists of:</h1>
+          <ul className="text-[#F7FD06] [-webkit-text-stroke:2px_#000000] text-2xl lg:text-7xl font-inter font-extrabold flex flex-col items-center gap-6">
+            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+              <span className="text-center">Digital Design</span>
+              <Image
+                src={assets.works_digitaldesign}
+                alt="Digital Design"
+                width={175}
+                height={80}
+                className="pointer-events-none absolute -left-2 top-1/4 -translate-y-1/2"
+              />
+            </li>
 
-            <h2 className=" text-center mb-2 text-4xl md:text-[2.5vw] font-figtree font-weight-bolder text-[#F7FD06] py-10">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
+            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+              <span className="text-center">Web Design</span>
+              <Image
+                src={assets.works_webdesign}
+                alt="Web Design"
+                width={230}
+                height={80}
+                className="pointer-events-none absolute -right-1 top-1/2 -translate-y-1/2"
+              />
+            </li>
+
+            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+              <span className="text-center">Direction &amp; Vision</span>
+              <Image
+                src={assets.works_direction}
+                alt="Direction & Vision"
+                width={250}
+                height={80}
+                className="pointer-events-none absolute -left-17 top-1/7 -translate-y-1/2"
+              />
+            </li>
+
+            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+              <span className="text-center">Graphic Interaction</span>
+              <Image
+                src={assets.works_graphicinteraction}
+                alt="Graphic Interaction"
+                width={200}
+                height={80}
+                className="pointer-events-none absolute -right-10 top-1/5 -translate-y-1/2"
+              />
+            </li>
+
+            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+              <span className="text-center z-2">Visual Storytelling</span>
+              <Image
+                src={assets.works_storytelling}
+                alt="Visual Storytelling"
+                width={175}
+                height={80}
+                className="pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2 z-0"
+              />
+            </li>
+          </ul>
+            <div className="mt-10 mb-10 px-5 flex justify-center">
+              <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
+            </div>
 
 
-            <span className="font-bold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-15 bg-[#FFF200] scale-y-150">
+            <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20 mb-15 bg-[#FFF200] scale-y-150">
                 RECENT WORK$
                </span>
           <HorizontalScrollCarousel />

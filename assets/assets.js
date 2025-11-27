@@ -10,6 +10,11 @@ import background from './background.png';
 import chat from './chat.svg';
 import goldfishes from './goldfishes.svg';
 import work_boroughs from './work-boroughs.jpg';
+import works_digitaldesign from './works-digitaldesign.svg';
+import works_direction from './works-direction.svg';
+import works_graphicinteraction from './works-graphicinteraction.svg';
+import works_webdesign from './works-webdesign.svg';
+import works_storytelling from './works-storytelling.svg';
 
 
 export const assets = {
@@ -25,6 +30,11 @@ export const assets = {
   work_boroughs,
   chat,
   goldfishes,  
+  works_digitaldesign,
+  works_direction,
+  works_graphicinteraction,
+  works_webdesign,
+  works_storytelling,
 };
 
 export const workData = [
