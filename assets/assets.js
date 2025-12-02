@@ -21,6 +21,9 @@ import heyyou_image1 from './heyyou-image1.png';
 import heyyou_image2 from './heyyou-image2.jpg';
 import heyyou_image3 from './heyyou-image3.png';
 import heyyou_image4 from './heyyou-image4.png';
+import boroughs_image1 from './boroughs-image1.png';
+import boroughs_image2 from './boroughs-image2.png';
+import boroughs_image3 from './boroughs-image3.png';
 
 
 export const assets = {
@@ -47,7 +50,9 @@ export const assets = {
   heyyou_image2,
   heyyou_image3,
   heyyou_image4,
-
+  boroughs_image1,
+  boroughs_image2,
+  boroughs_image3,
 };
 
 export const workData = [
@@ -67,4 +72,5 @@ export const workData = [
     title: 'Liliana Erasmus',
     image: './public/work-liliana.jpg',
   },
+  
 ];

@@ -17,6 +17,16 @@ export default function Projects() {
     img.src = url;
   }
 
+  // start fetching video metadata early (no UI change)
+  function preloadVideo(src) {
+    if (!src) return;
+    const url = typeof src === 'string' ? src : src?.src || src?.default;
+    if (!url || typeof document === 'undefined') return;
+    const v = document.createElement('video');
+    v.preload = 'metadata';
+    v.src = url;
+  }
+
   return (
     <>
        <section className="relative w-full  ">
@@ -38,7 +48,7 @@ export default function Projects() {
                     <div className='Heyyou p-5'>
                       <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-4">   
+                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
                             {[
                               { type: 'img', src: assets.work_heyyou },
                               { type: 'img', src: assets.heyyou_image1 },
@@ -49,7 +59,7 @@ export default function Projects() {
                             ].map((item, i) => (
                               <div
                                 key={i}
-                                className="mb-4 break-inside-avoid w-full"
+                                className="mb-4 break-inside-avoid w-full pb-3"
                                 onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
                               >
                                 {item.type === 'img' ? (
@@ -61,7 +71,7 @@ export default function Projects() {
                                     className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
                                   />
                                 ) : (
-                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-12px_12px_0_rgba(0,0,0,1)] border-0">
+                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
@@ -80,19 +90,22 @@ export default function Projects() {
                     <div className='Boroughs p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-4">   
+                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6">   
                             {[
                               { type: 'img', src: assets.work_boroughs },
-                              { type: 'img', src: assets.heyyou_image1 },
                               { type: 'text', title: 'Boroughs', subtitle: ' App + Self thought - Smart Mobile 2025' },
-                              { type: 'img', src: assets.heyyou_image2 },
-                              { type: 'img', src: assets.heyyou_image3 },
-                              { type: 'img', src: assets.heyyou_image4 },
+                              { type: 'img', src: assets.boroughs_image1 },
+                              { type: 'img', src: assets.boroughs_image2 },
+                              { type: 'img', src: assets.boroughs_image3 },
+                              { type: 'video', src: '/videos/boroughs-video.mp4' },
                             ].map((item, i) => (
                               <div
                                 key={i}
-                                className="mb-4 break-inside-avoid w-full"
-                                onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
+                                className="mb-4 break-inside-avoid w-full pb-3"
+                                onMouseEnter={() => {
+                                  if (item.type === 'img') preloadImage(item.src);
+                                  if (item.type === 'video') preloadVideo(item.src);
+                                }}
                               >
                                 {item.type === 'img' ? (
                                   <Image
@@ -101,6 +114,16 @@ export default function Projects() {
                                     width={600}
                                     height={900}
                                     className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
+                                  />
+                                ) : item.type === 'video' ? (
+                                  <video
+                                    src={item.src}
+                                    controls
+                                    playsInline
+                                    muted
+                                    loop
+                                    preload="metadata"
+                                    className="w-full h-auto rounded-lg shadow"
                                   />
                                 ) : (
                                   <div className="w-full rounded-lg bg-white p-6 shadow-[-12px_12px_0_rgba(0,0,0,1)] border-0">
