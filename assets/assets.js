@@ -17,6 +17,7 @@ import works_webdesign from './works-webdesign.svg';
 import works_storytelling from './works-storytelling.svg';
 import eye from './eye.svg';
 import work_heyyou from './work-heyyou.svg';
+import heyyou_image1 from './heyyou-image1.png';
 
 export const assets = {
   hero_image,
@@ -38,6 +39,7 @@ export const assets = {
   works_storytelling,
   eye,
   work_heyyou,
+  heyyou_image1,
 
 };
 

@@ -4,16 +4,11 @@ import React from 'react'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import Navigationbar from '../components/Navigationbar'
-import ReactCardFlip from 'react-card-flip';
+
 
 export default function Projects() {
 
-    const [flippedMap, setFlippedMap] = React.useState({});
-
-    function flipCard(id) {
-        setFlippedMap(prev => ({ ...prev, [id]: !prev[id] }));
-    }
-
+   
   return (
     <>
        <section className="relative w-full  ">
@@ -32,106 +27,51 @@ export default function Projects() {
 
                     </div>
 
-                    <div className='Heyyou'>
-                      <div style={{ perspective: 1200 }} className="flex ">
-                        <ReactCardFlip isFlipped={flippedMap['heyyou']} flipDirection="horizontal">
-                          <div
-                            className="Frontside w-[400px] h-[600px] rounded-lg overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-500 hover:scale-[1.02]"
-                            onClick={() => flipCard('heyyou')}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard('heyyou'); } }}
-                            role="button"
-                            tabIndex={0}
-                            aria-pressed={flippedMap['heyyou']}
-                          >
-                            <Image
-                              src={assets.work_heyyou}
-                              alt="HeyYou Front"
-                              width={400}
-                              height={600}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
+                    <div className='Heyyou p-10'>
+                      <div className="flex overflow-visible items-start gap-8">
+                        <div className="flex-1">
+                          <div className="columns-1 sm:columns-2 md:columns-3 gap-4">
+                            {[
+                                
+                              { type: 'img', src: assets.work_heyyou },
+                              
+                              { type: 'img', src: assets.heyyou_image1 },
+                              { type: 'text', title: 'HeyYou', subtitle: ' App + Self thought - Smart Mobile 2025' },
+                              { type: 'img', src: assets.heyyou_image1 },
+                              { type: 'img', src: assets.work_storytelling },
+                              
+                              { type: 'img', src: assets.work_someother },
+                            ].map((item, i) => (
+                              <div key={i} className="mb-4 break-inside-avoid w-full">
+                                {item.type === 'img' ? (
+                                  <Image
+                                    src={item.src}
+                                    alt={`work-${i}`}
+                                    width={600}
+                                    height={900}
+                                    className="w-full h-auto rounded-lg shadow"
+                                  />
+                                ) : (
+                                  
+                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-12px_12px_0_rgba(0,0,0,1)] border-0">
+                                    <h1 className="text-4xl font-bold mb-4">{item.title}</h1>
+                                    <h2 className="text-md font-extralight mb-4">{item.subtitle}</h2>
+                                    <p className="text-md ">
+                                      Imagine if your crush actually knew you existed ...well, now they can! With HeyYou, you simply add one of their social media profiles, and the app gathers all their public information for you.<br /> <br />
+                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to “get to know” someone before they even know you.<br /> <br />
+                                      It’s meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
+                                    </p>
 
-                          <div
-                            className="Backside w-[400px] h-[600px] rounded-lg bg-white p-6 cursor-pointer flex flex-col justify-between shadow-[-15px_15px_0_rgba(0,0,0,1)]"
-                            onClick={() => flipCard('heyyou')}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard('heyyou'); } }}
-                            role="button"
-                            tabIndex={0}
-                            aria-pressed={!flippedMap['heyyou']}
-                          >
-                            <div>
-                              <h3 className="text-2xl font-bold mb-2">Project Title</h3>
-                              <p className="text-sm text-gray-700">
-                                Add your project description here — what you did, tools used, and the outcome.
-                                Keep it concise so the flip stays snappy.
-                              </p>
-                            </div>
-
-                            <div className="flex justify-end">
-                              <button
-                                type="button"
-                                onClick={(e) => { e.stopPropagation(); flipCard('heyyou'); }}
-                                className="bg-black text-white px-3 py-1 rounded-md text-sm"
-                              >
-                                Close
-                              </button>
-                            </div>
-                            
-                           
+                                   
+                                  </div>
+                                )}
+                              </div>
+                            ))}
                           </div>
-                        </ReactCardFlip>
+                        </div>
                       </div>
                     </div>
-                    <div className='Boroughs'>
-                        <div style={{ perspective: 1200 }} className="flex ">
-                        <ReactCardFlip isFlipped={flippedMap['boroughs']} flipDirection="horizontal">
-                          <div
-                            className="Frontside w-[400px] h-[600px] rounded-lg overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-500 hover:scale-[1.02]"
-                            onClick={() => flipCard('boroughs')}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard('boroughs'); } }}
-                            role="button"
-                            tabIndex={0}
-                            aria-pressed={flippedMap['boroughs']}
-                          >
-                            <Image
-                              src={assets.work_boroughs}
-                              alt="HeyYou Front"
-                              width={400}
-                              height={600}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-
-                          <div
-                            className="Backside w-[400px] h-[600px] rounded-lg bg-white p-6 cursor-pointer flex flex-col justify-between shadow-[-15px_15px_0_rgba(0,0,0,1)]"
-                            onClick={() => flipCard('boroughs')}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard('boroughs'); } }}
-                            role="button"
-                            tabIndex={0}
-                            aria-pressed={!flippedMap['boroughs']}
-                          >
-                            <div>
-                              <h3 className="text-2xl font-bold mb-2">Project Title</h3>
-                              <p className="text-sm text-gray-700">
-                                Add your project description here — what you did, tools used, and the outcome.
-                                Keep it concise so the flip stays snappy.
-                              </p>
-                            </div>
-
-                            <div className="flex justify-end">
-                              <button
-                                type="button"
-                                onClick={(e) => { e.stopPropagation(); flipCard('boroughs'); }}
-                                className="bg-black text-white px-3 py-1 rounded-md text-sm"
-                              >
-                                Close
-                              </button>
-                            </div>
-                          </div>
-                        </ReactCardFlip>
-                      </div>
-                    </div>
+                    <div className='Boroughs'></div>
                     <div className='Vanderlande'></div>
                     <div className='Liliana'> </div>
                  </div>
