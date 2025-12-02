@@ -18,6 +18,10 @@ import works_storytelling from './works-storytelling.svg';
 import eye from './eye.svg';
 import work_heyyou from './work-heyyou.svg';
 import heyyou_image1 from './heyyou-image1.png';
+import heyyou_image2 from './heyyou-image2.jpg';
+import heyyou_image3 from './heyyou-image3.png';
+import heyyou_image4 from './heyyou-image4.png';
+
 
 export const assets = {
   hero_image,
@@ -40,6 +44,9 @@ export const assets = {
   eye,
   work_heyyou,
   heyyou_image1,
+  heyyou_image2,
+  heyyou_image3,
+  heyyou_image4,
 
 };
 
