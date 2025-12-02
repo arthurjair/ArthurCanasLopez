@@ -24,6 +24,7 @@ import heyyou_image4 from './heyyou-image4.png';
 import boroughs_image1 from './boroughs-image1.png';
 import boroughs_image2 from './boroughs-image2.png';
 import boroughs_image3 from './boroughs-image3.png';
+import work_liliana from './work-liliana.jpg';
 
 
 export const assets = {
@@ -53,6 +54,7 @@ export const assets = {
   boroughs_image1,
   boroughs_image2,
   boroughs_image3,
+  work_liliana,
 };
 
 export const workData = [
