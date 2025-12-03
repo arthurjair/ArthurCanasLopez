@@ -25,6 +25,17 @@ import boroughs_image1 from './boroughs-image1.png';
 import boroughs_image2 from './boroughs-image2.png';
 import boroughs_image3 from './boroughs-image3.png';
 import work_liliana from './work-liliana.jpg';
+import liliana_image1 from './liliana-image1.png';
+import liliana_image2 from './liliana-image2.png';
+import liliana_image3 from './liliana-image3.png';
+import liliana_image4 from './liliana-image4.png';
+import work_vanderlande from './work-vanderlande.jpg';
+import vanderlande_image1 from './vanderlande-image1.png';
+import vanderlande_image2 from './vanderlande-image2.png';
+import vanderlande_image3 from './vanderlande-image3.png';
+import vanderlande_image4 from './vanderlande-image4.png';
+import projects_smiski from './projects-smiski.svg';
+
 
 
 export const assets = {
@@ -55,6 +66,16 @@ export const assets = {
   boroughs_image2,
   boroughs_image3,
   work_liliana,
+  liliana_image1,
+  liliana_image2,
+  liliana_image3,
+  liliana_image4,
+  work_vanderlande,
+  vanderlande_image1,
+  vanderlande_image2,
+  vanderlande_image3,
+  vanderlande_image4,
+  projects_smiski,
 };
 
 export const workData = [

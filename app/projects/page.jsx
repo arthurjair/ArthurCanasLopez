@@ -38,10 +38,11 @@ export default function Projects() {
 
                  {/* Hero content */}
           
-                 <div className="my-4  pt-20   ">
-                    <div>
-                        <h1>PROJECTS</h1>
-                        <p>From websites, posters, apps, logos, and animation. I’ve been learning a lot and creating work I’m really proud of. Here’s a look at my progress so far.</p>
+                 <div className="my-4  pt-30">
+                    <div className="mt-10 mb-10 px-5 flex relative items-center flex-col gap-12 text-center">
+                        <div className='absolute z-2  left-1/5 -translate-y-2/3 '> <Image width={250} height={80} src={assets.projects_smiski} alt="Projects Smiski" /></div>
+                        <h1 className="flex relative text-6xl lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
+                        <p className='max-w-3xl text-center lg:text-4xl  '>From websites, posters, apps, logos, and animation. I’ve been learning a lot and creating work I’m really proud of. Here’s a look at my progress so far.</p>
 
                     </div>
 
@@ -98,6 +99,7 @@ export default function Projects() {
                               { type: 'img', src: assets.boroughs_image2 },
                               { type: 'img', src: assets.boroughs_image3 },
                               { type: 'video', src: '/videos/boroughs-video.mp4' },
+                              
                             ].map((item, i) => (
                               <div
                                 key={i}
@@ -148,12 +150,12 @@ export default function Projects() {
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
                             {[
-                              { type: 'img', src: assets.work_heyyou },
+                              { type: 'img', src: assets.liliana_image1 },
                               { type: 'img', src: assets.work_liliana },
                               { type: 'text', title: 'Liliana Erasmus', subtitle: 'Website Made with Wix Studio' },
-                              { type: 'img', src: assets.heyyou_image2 },
-                              { type: 'img', src: assets.heyyou_image3 },
-                              { type: 'img', src: assets.heyyou_image4 },
+                              { type: 'img', src: assets.liliana_image3 },
+                              { type: 'img', src: assets.liliana_image2 },
+                              { type: 'img', src: assets.liliana_image4 },
                             ].map((item, i) => (
                               <div
                                 key={i}
@@ -169,13 +171,57 @@ export default function Projects() {
                                     className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
                                   />
                                 ) : (
-                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
+                                  <div className=" w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
-                                    <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
+                                    <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      Imagine if your crush actually knew you existed ...well, now they can! With HeyYou, you simply add one of their social media profiles, and the app gathers all their public information for you.{"\n\n"}
-                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to “get to know” someone before they even know you.{"\n\n"}
-                                      It’s meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
+                                      Liliana Erasmus is a Dutch-Aruban writer and illustrator who has been creating children’s books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
+                                      She recently reached out to me to rebrand and redesign her website, as her previous one no longer reflected her experience or personality as an artist. My goal was to give her a fresh, modern online presence that still felt warm, creative, and true to her storytelling style. The new design focuses on showcasing her books, art, and background in a more engaging and personal way.
+                                      
+                                    </p>
+                                    <button className=' bg-black text-white rounded-lg p-2 mt-5 '>Coming Soon!</button>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='Vanderlande p-5'>
+                        <div className="flex overflow-visible items-start gap-8">
+                        <div className="flex-1">
+                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
+                            {[
+                              { type: 'img', src: assets.work_vanderlande },
+                              { type: 'img', src: assets.vanderlande_image1},
+                              { type: 'text', title: 'Vanderlande Trends App', subtitle: 'Industry Project - Smart Mobile 2025' },
+                              { type: 'img', src: assets.vanderlande_image3 },
+                              { type: 'img', src: assets.vanderlande_image2 },
+                              { type: 'img', src: assets.vanderlande_image4 },
+                            ].map((item, i) => (
+                              <div
+                                key={i}
+                                className="mb-4 break-inside-avoid w-full pb-3"
+                                onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
+                              >
+                                {item.type === 'img' ? (
+                                  <Image
+                                    src={item.src}
+                                    alt={`work-${i}`}
+                                    width={600}
+                                    height={900}
+                                    className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
+                                  />
+                                ) : (
+                                  <div className=" w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
+                                    <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
+                                    <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
+                                    <p className="text-xl whitespace-pre-line">
+                                      For my final project in the Smart Mobile semester, our client was Vanderlande, who asked us to improve their existing trend report. My group and I decided to give it a more visual and engaging direction, turning it into an experience rather than a plain document.{"\n\n"}
+                                      I contributed mainly to the layout, visual style, and tone of voice of the project. I took inspiration from other creative trend reports like IKEA At Home and the CSCS Report, both known for their strong storytelling and visual design which we aimed to bring to Vanderlande’s version.
+                                      
+                                      
                                     </p>
                                   </div>
                                 )}
@@ -184,9 +230,8 @@ export default function Projects() {
                           </div>
                         </div>
                       </div>
-                        
+
                     </div>
-                    <div className='Vanderlande'></div>
                     
                  </div>
              </div>
