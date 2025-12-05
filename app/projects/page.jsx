@@ -41,7 +41,7 @@ export default function Projects() {
                  <div className="my-4  pt-30">
                     <div className="mt-10 mb-10 px-5 flex relative items-center flex-col gap-12 text-center">
                         <div className='absolute z-2  left-1/5 -translate-y-2/3 '> <Image width={250} height={80} src={assets.projects_smiski} alt="Projects Smiski" /></div>
-                        <h1 className="flex relative text-6xl lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
+                        <h1 className="flex relative text-3xl  lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
                         <p className='max-w-3xl text-center lg:text-4xl  '>From websites, posters, apps, logos, and animation. I’ve been learning a lot and creating work I’m really proud of. Here’s a look at my progress so far.</p>
 
                     </div>
@@ -175,7 +175,7 @@ export default function Projects() {
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      Liliana Erasmus is a Dutch-Aruban writer and illustrator who has been creating children’s books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
+                                      Liliana Erasmus is a Aruban-Dutch writer and illustrator who has been creating children’s books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
                                       She recently reached out to me to rebrand and redesign her website, as her previous one no longer reflected her experience or personality as an artist. My goal was to give her a fresh, modern online presence that still felt warm, creative, and true to her storytelling style. The new design focuses on showcasing her books, art, and background in a more engaging and personal way.
                                       
                                     </p>

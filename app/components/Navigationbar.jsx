@@ -30,11 +30,12 @@ const Navigationbar = ({ isInline = false }) => {
     };
   }, []);
 
-  // when isInline is true we want the nav fixed but constrained to the centered container
+  // determine nav class based on isInline and scrolled is fixed 
   const navClass = isInline
     ? `fixed left-1/2 transform -translate-x-1/2 w-11/12 max-w-7xl z-50 transition-all duration-200 ${scrolled ? "top-0" : "top-8"}`
     : `fixed w-full z-50 transition-transform duration-200 ${scrolled ? "-translate-y-6" : "translate-y-0"}`;
 
+    // the navigation bar
   return (
     <>
       <nav className={navClass}>
@@ -52,14 +53,14 @@ const Navigationbar = ({ isInline = false }) => {
 
           {/* nav items (right) */}
           <ul className="hidden md:flex items-center  lg:gap-8 py-3">
-            {/* HOME */}
+            
             <li className="relative overflow-visible">
               <a
                 href="/"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="Home"
               >
-                {/* black bottom card */}
+                {/* black bottom square */}
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-4 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
                     <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
@@ -67,7 +68,7 @@ const Navigationbar = ({ isInline = false }) => {
                   </span>
                 </div>
 
-                {/* white top card */}
+                {/* white top square*/}
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
                   <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
                   <span className="text-sm font-medium">HOME</span>
@@ -78,7 +79,7 @@ const Navigationbar = ({ isInline = false }) => {
             {/* PROJECTS */}
             <li className="relative overflow-visible">
               <a
-                href="/projects"
+                href="/Projects"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="Projects"
               >
@@ -118,7 +119,7 @@ const Navigationbar = ({ isInline = false }) => {
             </li>
           </ul>
 
-          {/* mobile toggle (still in the same row) */}
+          {/* mobile  */}
           <div className="md:hidden" onClick={openMenu}>
             <button>
               <Image src={assets.menu_burger} alt="Menu" width={28} height={28} className="cursor-pointer" />
