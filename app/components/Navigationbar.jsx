@@ -1,5 +1,7 @@
+'use client'
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { assets } from "@/assets/assets";
 
 const Navigationbar = ({ isInline = false }) => {
@@ -41,7 +43,7 @@ const Navigationbar = ({ isInline = false }) => {
       <nav className={navClass}>
         <div className="mx-full w-10/10 flex items-center justify-between">
           {/* logo (left) */}
-          <a href="/">
+          <Link href="/">
             <Image
               src={assets.logo_portfolio}
               alt="Logo"
@@ -49,13 +51,13 @@ const Navigationbar = ({ isInline = false }) => {
               height={32}
               className="w-[8vw] cursor-pointer mr-14"
             />
-          </a>
+          </Link>
 
           {/* nav items (right) */}
           <ul className="hidden md:flex items-center  lg:gap-8 py-3">
             
             <li className="relative overflow-visible">
-              <a
+              <Link
                 href="/"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="Home"
@@ -73,13 +75,13 @@ const Navigationbar = ({ isInline = false }) => {
                   <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
                   <span className="text-sm font-medium">HOME</span>
                 </div>
-              </a>
+              </Link>
             </li>
 
             {/* PROJECTS */}
             <li className="relative overflow-visible">
-              <a
-                href="/Projects"
+              <Link
+                href="/projects"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="Projects"
               >
@@ -94,12 +96,12 @@ const Navigationbar = ({ isInline = false }) => {
                   <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />
                   <span className="text-sm font-medium">PROJECTS</span>
                 </div>
-              </a>
+              </Link>
             </li>
 
             {/* ABOUT */}
             <li className="relative overflow-visible">
-              <a
+              <Link
                 href="/about"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="About"
@@ -115,7 +117,7 @@ const Navigationbar = ({ isInline = false }) => {
                   <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />
                   <span className="text-sm font-medium">ABOUT ME</span>
                 </div>
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -145,21 +147,21 @@ const Navigationbar = ({ isInline = false }) => {
 
         <li>
           <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />{" "}
-          <a onClick={closeMenu} href="/">
+          <Link onClick={closeMenu} href="/">
             HOME
-          </a>
+          </Link>
         </li>
         <li>
           <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />{" "}
-          <a onClick={closeMenu} href="/projects">
+          <Link onClick={closeMenu} href="/projects">
             PROJECTS
-          </a>
+          </Link>
         </li>
         <li>
           <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />{" "}
-          <a onClick={closeMenu} href="/about">
+          <Link onClick={closeMenu} href="/about">
             ABOUT ME
-          </a>
+          </Link>
         </li>
       </ul>
     </>
