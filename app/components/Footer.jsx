@@ -19,18 +19,18 @@ const EmailButton = () => {
     <div className="relative flex flex-col items-center justify-center pb-10">
       <button
           onClick={handleCopy}
-          className="relative block rounded-full bg-[#F7FD06] px-5 py-1 text-center text-[2vw] font-extrabold text-[#FF0000] transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 lg:px-9 lg:py-2 lg:text-2xl mb-4"
+          className="relative block rounded-full bg-[#F7FD06] px-5 py-1 text-center text-[3vw] font-extrabold text-[#FF0000] transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 lg:px-9 lg:py-2 lg:text-2xl mb-4"
         >
           {copied ? 'Copied to Clipboard!' : 'TAP TO COPY!'}
         </button>
-      <div className="relative inline-block">
+      <div className="relative inline-block lg:pt-2">
         {/* Black bottom layer – offset */}
         <div className="absolute inset-0 -translate-x-1.5 translate-y-1.5 rounded-lg bg-black md:-translate-x-2.5 md:translate-y-3.5" />
 
         {/* White top layer – clickable */}
         <button
           onClick={handleCopy}
-          className="relative block rounded-lg bg-white px-6 py-4 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 text-md md:px-5 md:py-5 md:text-3xl">
+          className="relative block rounded-lg bg-white px-6 py-4 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 text-md md:px-5 md:py-5 md:text-3xl lg:px-9 lg:py-6 lg:text-5xl ">
           <h1>arthur2004jair@gmail.com</h1>
         </button>
       </div>
@@ -104,7 +104,7 @@ export default function Footer() {
               </li>
             </div>
 
-            <li className="ml-auto pr-5 text-sm text-right lg:text-2xl">
+            <li className="ml-auto pr-5 w-40 md:w-60 lg:w-100 text-sm text-right lg:text-2xl">
               <p className=" text-[#F7FD06] ">
                 Collaboration With <span className="underline ">Cua Studio</span>
               </p>

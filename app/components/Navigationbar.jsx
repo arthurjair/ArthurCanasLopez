@@ -35,7 +35,7 @@ const Navigationbar = ({ isInline = false }) => {
 
   // Keep inline nav relative on small screens, fixed on md+
   const navClass = isInline
-    ? `relative md:fixed md:left-1/2 md:transform md:-translate-x-1/2 md:w-11/12 md:max-w-7xl md:z-50 md:transition-all md:duration-200 ${scrolled ? "md:top-0" : "md:top-8"}`
+    ? `relative md:fixed md:left-1/2 md:transform md:-translate-x-1/2 md:w-full lg:w-11/12  lg:max-w-7xl md:z-50 md:transition-all md:duration-200 ${scrolled ? "md:top-0" : "md:top-8"}`
     : `fixed w-full z-50 transition-transform duration-200 ${scrolled ? "-translate-y-6" : "translate-y-0"}`;
 
   return (

@@ -30,73 +30,54 @@ const Recentworks = () => {
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
       <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 ">
-          <h1 className="text-center mb-2 text-4xl md:text-[3vw] font-figtree font-black text-[#FF0000] [-webkit-text-stroke:2px_#FFFFFF] py-10">My bag consists of:</h1>
-          <ul className="text-[#F7FD06] [-webkit-text-stroke:2px_#000000] text-2xl lg:text-7xl font-inter font-extrabold flex flex-col items-center gap-6">
-            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+          <h1 className="text-center mb-2 text-2xl md:text-[3vw] font-figtree font-black text-[#FF0000]  [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] py-5 lg:py-10">My bag consists of:</h1>
+          <ul className="text-[#F7FD06] lg:[-webkit-text-stroke:2px_#000000] [-webkit-text-stroke:1.5px_#000000] text-[9vw] lg:text-7xl font-inter font-extrabold flex flex-col items-center lg:gap-6">
+            <li className="relative w-full max-w-3xl flex justify-center items-center lg:py-3">
               <span className="text-center">Digital Design</span>
               <Image
                 src={assets.works_digitaldesign}
                 alt="Digital Design"
-                width={165}
-                height={80}
-                className="pointer-events-none absolute -left-0 top-1/4 -translate-y-1/2"
+                
+                className="w-15 md:w-30 lg:w-50 pointer-events-none absolute left-4 top-1/5 -translate-y-1/2 md:left-9 lg:-left-6"
               />
             </li>
 
-            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+            <li className="relative w-full max-w-3xl flex justify-center items-center lg:py-3">
               <span className="text-center">Web Design</span>
               <Image
                 src={assets.works_webdesign}
                 alt="Web Design"
-                width={230}
-                height={80}
-                className="pointer-events-none absolute -right-1 top-1/2 -translate-y-1/2"
+                
+                className="w-25 md:w-40 lg:w-60 pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 md:right-10 lg:right-1"
               />
             </li>
 
-            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+            <li className="relative w-full max-w-3xl flex justify-center items-center lg:py-3">
               <span className="text-center">Direction &amp; Vision</span>
               <Image
                 src={assets.works_direction}
                 alt="Direction & Vision"
-                width={250}
-                height={80}
-                className="pointer-events-none absolute -left-17 top-1/7 -translate-y-1/2"
+                
+                className="w-30 md:w-40 lg:w-60 pointer-events-none absolute -left-9 top-1/7 -translate-y-1/2 md:-left-4 md:top-1/5 lg:-left-15 lg:top-1/8"
               />
             </li>
 
-            <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
+            <li className="relative w-full max-w-3xl flex justify-center items-center lg:py-3">
               <span className="text-center">Graphic Interaction</span>
               <Image
                 src={assets.eye}
                 alt="Graphic Interaction"
-                width={140}
-                height={80}
+                
 
-                className=" eye pointer-events-none absolute -right-27 top-1/4 -translate-y-1/2"
+                className=" w-15 md:w-30 lg:w-50 eye pointer-events-none absolute right-6 top-1/5 -translate-y-1/2 md:right-16 lg:-right-10 lg:top-1/14"
               /><Image
                 src={assets.eye}
                 alt="Graphic Interaction"
-                width={140}
-                height={80}
+                
 
-                className=" eye pointer-events-none absolute -right-5 top-1/4 -translate-y-1/2"
+                className=" w-15 md:w-30 lg:w-50 eye pointer-events-none absolute -right-3 top-1/5 -translate-y-1/2 lg:-right-40"
               />
-              <Image
-                src={assets.eye}
-                alt="Graphic Interaction"
-                width={140}
-                height={80}
-
-                className=" eye pointer-events-none absolute -right-27 top-1/4 -translate-y-1/2"
-              />
-              <Image
-                src={assets.eye}
-                alt="Graphic Interaction"
-                width={140}
-                height={80}
-                className=" eye pointer-events-none absolute -right-5 top-1/4 -translate-y-1/2"
-              />
+              
             </li>
 
             <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
@@ -104,9 +85,8 @@ const Recentworks = () => {
               <Image
                 src={assets.works_storytelling}
                 alt="Visual Storytelling"
-                width={175}
-                height={80}
-                className="pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2 z-0"
+                
+                className="w-20 md:w-40 lg:w-60 pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2  z-0 lg:-left-5"
               />
             </li>
           </ul>
