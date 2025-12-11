@@ -1,4 +1,4 @@
-'use client'
+﻿"use client"
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,7 @@ const Navigationbar = ({ isInline = false }) => {
   const sidemenuRef = useRef();
   const [scrolled, setScrolled] = useState(false);
 
+  // menu open/close helpers
   const openMenu = () => {
     if (sidemenuRef.current) sidemenuRef.current.style.transform = "translateX(-16rem)";
   };
@@ -32,16 +33,16 @@ const Navigationbar = ({ isInline = false }) => {
     };
   }, []);
 
-  // determine nav class based on isInline and scrolled is fixed 
+  // Keep inline nav relative on small screens, fixed on md+
   const navClass = isInline
-    ? `fixed left-1/2 transform -translate-x-1/2 w-11/12 max-w-7xl z-50 transition-all duration-200 ${scrolled ? "top-0" : "top-8"}`
+    ? `relative md:fixed md:left-1/2 md:transform md:-translate-x-1/2 md:w-11/12 md:max-w-7xl md:z-50 md:transition-all md:duration-200 ${scrolled ? "md:top-0" : "md:top-8"}`
     : `fixed w-full z-50 transition-transform duration-200 ${scrolled ? "-translate-y-6" : "translate-y-0"}`;
 
-    // the navigation bar
   return (
     <>
       <nav className={navClass}>
-        <div className="mx-full w-10/10 flex items-center justify-between">
+        {/* improved inner container so nav centers and respects parent */}
+        <div className="w-full max-w-7xl mx-auto px-4 flex items-center justify-between">
           {/* logo (left) */}
           <Link href="/">
             <Image
@@ -49,20 +50,18 @@ const Navigationbar = ({ isInline = false }) => {
               alt="Logo"
               width={30}
               height={32}
-              className="w-[8vw] cursor-pointer mr-14"
+              className="w-[8vw] cursor-pointer mr-4"
             />
           </Link>
 
           {/* nav items (right) */}
-          <ul className="hidden md:flex items-center  lg:gap-8 py-3">
-            
+          <ul className="hidden md:flex items-center lg:gap-8 py-3">
             <li className="relative overflow-visible">
               <Link
                 href="/"
                 className="group relative inline-flex items-center cursor-pointer select-none"
                 aria-label="Home"
               >
-                {/* black bottom square */}
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-4 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
                     <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
@@ -70,7 +69,6 @@ const Navigationbar = ({ isInline = false }) => {
                   </span>
                 </div>
 
-                {/* white top square*/}
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
                   <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
                   <span className="text-sm font-medium">HOME</span>
@@ -78,7 +76,6 @@ const Navigationbar = ({ isInline = false }) => {
               </Link>
             </li>
 
-            {/* PROJECTS */}
             <li className="relative overflow-visible">
               <Link
                 href="/projects"
@@ -99,7 +96,6 @@ const Navigationbar = ({ isInline = false }) => {
               </Link>
             </li>
 
-            {/* ABOUT */}
             <li className="relative overflow-visible">
               <Link
                 href="/about"
@@ -121,9 +117,9 @@ const Navigationbar = ({ isInline = false }) => {
             </li>
           </ul>
 
-          {/* mobile  */}
-          <div className="md:hidden" onClick={openMenu}>
-            <button>
+          {/* mobile hamburger */}
+          <div className="md:hidden">
+            <button onClick={openMenu} aria-label="Open menu">
               <Image src={assets.menu_burger} alt="Menu" width={28} height={28} className="cursor-pointer" />
             </button>
           </div>
@@ -133,7 +129,7 @@ const Navigationbar = ({ isInline = false }) => {
       {/* Mobile Menu */}
       <ul
         ref={sidemenuRef}
-        className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-purple-100 border border-black-200 rounded-ms transition duration-500"
+        className="flex md:hidden flex-col gap-4 py-20 px-6 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white transition duration-500"
       >
         <div className="absolute right-6 top-10" onClick={closeMenu}>
           <Image
@@ -145,20 +141,20 @@ const Navigationbar = ({ isInline = false }) => {
           />
         </div>
 
-        <li>
-          <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />{" "}
+        <li className="flex items-center gap-3">
+          <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
           <Link onClick={closeMenu} href="/">
             HOME
           </Link>
         </li>
-        <li>
-          <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />{" "}
+        <li className="flex items-center gap-3">
+          <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />
           <Link onClick={closeMenu} href="/projects">
             PROJECTS
           </Link>
         </li>
-        <li>
-          <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />{" "}
+        <li className="flex items-center gap-3">
+          <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />
           <Link onClick={closeMenu} href="/about">
             ABOUT ME
           </Link>

@@ -174,6 +174,7 @@ export default Recentworks
 const cards = [
   { url: '/work-heyyou.svg', title: 'HeyYou', id: 1, target: 'heyyou' }, // files in public folder/
   { url: '/work-boroughs.jpg', title: 'Boroughs', id: 2, target: 'boroughs' },
-  { url: '/work-vanderlande.jpg', title: 'Vanderlande', id: 3, target: 'vanderlande' },
   { url: '/work-liliana.jpg', title: 'Liliana', id: 4, target: 'liliana' },
+  { url: '/work-vanderlande.jpg', title: 'Vanderlande', id: 3, target: 'vanderlande' },
+  
 ];
