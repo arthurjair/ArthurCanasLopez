@@ -1,6 +1,7 @@
-import { motion, useTransform, useScroll } from "framer-motion";
+﻿import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { assets } from '@/assets/assets'
 
 
@@ -110,7 +111,7 @@ const Recentworks = () => {
             </li>
           </ul>
           <div className="mt-10 mb-10 px-5 flex justify-center">
-            <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I don’t believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the client’s. If it doesn’t stand out, it’s not worth making.</h2>
+            <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I dont believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the clients. If it doesnt stand out, its not worth making.</h2>
           </div>
 
 
@@ -130,9 +131,6 @@ const Recentworks = () => {
 
   )
 }
-
-
-
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
@@ -157,30 +155,25 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ card }) => {
   return (
-    <div
-      key={card.id}
-      className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg "
-    >
+    <Link href={`/projects#${card.target}`} className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg " aria-label={card.title}>
       <div className="absolute inset-0 z-0 ">
         <Image
-          src={card.url}               // can be a string like '/work-heyyou.png' (public/) or an imported image object (assets.someImage)
+          src={card.url}               
           alt={card.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110 "
           priority={false}
         />
       </div>
-
-    </div>
+    </Link>
   );
 };
 
 export default Recentworks
 
 const cards = [
-  { url: '/work-heyyou.svg', title: 'Title 1', id: 1 }, // file in public/
-  { url: '/work-boroughs.jpg', title: 'Title 2', id: 2 }, // using your imported assets object (works if assets.work_boroughs is an imported image)
-  { url: '/work-vanderlande.jpg', title: 'Title 3', id: 3 },
-  { url: '/work-liliana.jpg', title: 'Title 4', id: 4 },
-
+  { url: '/work-heyyou.svg', title: 'HeyYou', id: 1, target: 'heyyou' }, // files in public folder/
+  { url: '/work-boroughs.jpg', title: 'Boroughs', id: 2, target: 'boroughs' },
+  { url: '/work-vanderlande.jpg', title: 'Vanderlande', id: 3, target: 'vanderlande' },
+  { url: '/work-liliana.jpg', title: 'Liliana', id: 4, target: 'liliana' },
 ];

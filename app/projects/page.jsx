@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 import Footer from '../components/Footer';
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import Navigationbar from '../components/Navigationbar'
@@ -8,7 +8,25 @@ import Navigationbar from '../components/Navigationbar'
 
 export default function Projects() {
 
-  // preload helper — handles imported image modules or string URLs
+  // scroll to hash on mount and when hash changes
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        // small timeout to allow layout/paint
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+    };
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
+
+  // preload helper  handles imported image modules or string URLs
   function preloadImage(src) {
     if (!src) return;
     const url = typeof src === 'string' ? src : src?.src || src?.default;
@@ -40,17 +58,17 @@ export default function Projects() {
           
                  <div className="my-4  pt-30">
                     <div className="mt-10 mb-10 px-5 flex relative items-center flex-col gap-12 text-center">
-                        <div className='absolute z-2  left-1/5 -translate-y-2/3 '> <Image width={250} height={80} src={assets.projects_smiski} alt="Projects Smiski" /></div>
+                        <div className='absolute z-2  left-1/5 -translate-y-3/5 '> <Image width={250} height={80} src={assets.projects_smiski} alt="Projects Smiski" /></div>
                         <h1 className="flex relative text-3xl  lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
-                        <p className='max-w-3xl text-center lg:text-4xl  '>From websites, posters, apps, logos, and animation. I’ve been learning a lot and creating work I’m really proud of. Here’s a look at my progress so far.</p>
+                        <p className='max-w-3xl text-center lg:text-4xl  '>From websites, posters, apps, logos, and animation. Ive been learning a lot and creating work Im really proud of. Heres a look at my progress so far.</p>
 
                     </div>
 
-                    <div className='Heyyou p-5'>
+                    <div id="heyyou" className='Heyyou p-5'>
                       <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
-                            {[
+                            {[ 
                               { type: 'img', src: assets.work_heyyou },
                               { type: 'img', src: assets.heyyou_image1 },
                               { type: 'text', title: 'HeyYou', subtitle: ' App + Self thought - Smart Mobile 2025' },
@@ -77,8 +95,8 @@ export default function Projects() {
                                     <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
                                       Imagine if your crush actually knew you existed ...well, now they can! With HeyYou, you simply add one of their social media profiles, and the app gathers all their public information for you.{"\n\n"}
-                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to “get to know” someone before they even know you.{"\n\n"}
-                                      It’s meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
+                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to get to know someone before they even know you.{"\n\n"}
+                                      Its meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
                                     </p>
                                   </div>
                                 )}
@@ -88,7 +106,8 @@ export default function Projects() {
                         </div>
                       </div>
                     </div>
-                    <div className='Boroughs p-5'>
+
+                    <div id="boroughs" className='Boroughs p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 md:columns-3 gap-6">   
@@ -145,7 +164,7 @@ export default function Projects() {
                       </div>
 
                     </div>
-                    <div className='Liliana p-5'>
+                    <div id="liliana" className='Liliana p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
@@ -175,7 +194,7 @@ export default function Projects() {
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      Liliana Erasmus is a Aruban-Dutch writer and illustrator who has been creating children’s books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
+                                      Liliana Erasmus is a Aruban-Dutch writer and illustrator who has been creating childrens books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
                                       She recently reached out to me to rebrand and redesign her website, as her previous one no longer reflected her experience or personality as an artist. My goal was to give her a fresh, modern online presence that still felt warm, creative, and true to her storytelling style. The new design focuses on showcasing her books, art, and background in a more engaging and personal way.
                                       
                                     </p>
@@ -188,7 +207,7 @@ export default function Projects() {
                         </div>
                       </div>
                     </div>
-                    <div className='Vanderlande p-5'>
+                    <div id="vanderlande" className='Vanderlande p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
@@ -219,7 +238,7 @@ export default function Projects() {
                                     <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
                                       For my final project in the Smart Mobile semester, our client was Vanderlande, who asked us to improve their existing trend report. My group and I decided to give it a more visual and engaging direction, turning it into an experience rather than a plain document.{"\n\n"}
-                                      I contributed mainly to the layout, visual style, and tone of voice of the project. I took inspiration from other creative trend reports like IKEA At Home and the CSCS Report, both known for their strong storytelling and visual design which we aimed to bring to Vanderlande’s version.
+                                      I contributed mainly to the layout, visual style, and tone of voice of the project. I took inspiration from other creative trend reports like IKEA At Home and the CSCS Report, both known for their strong storytelling and visual design which we aimed to bring to Vanderlandes version.
                                       
                                       
                                     </p>

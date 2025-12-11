@@ -1,10 +1,28 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 *{
   font-family: inter;
   font-family: figtree;
+}
+
+/* Smooth scroll and anchor offset */
+:root {
+  /* Adjust this value if your fixed header is taller/shorter */
+  --header-offset: 100px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Apply offset so in-page anchors appear below the fixed nav */
+[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+/* Optional helper class if you want to opt-in on specific elements */
+.scroll-offset {
+  scroll-margin-top: var(--header-offset);
 }

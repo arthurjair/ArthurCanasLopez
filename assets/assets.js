@@ -35,6 +35,7 @@ import vanderlande_image2 from './vanderlande-image2.png';
 import vanderlande_image3 from './vanderlande-image3.png';
 import vanderlande_image4 from './vanderlande-image4.png';
 import projects_smiski from './projects-smiski.svg';
+import arthur_popout from './arthur-popout4.png';
 
 
 
@@ -76,6 +77,7 @@ export const assets = {
   vanderlande_image3,
   vanderlande_image4,
   projects_smiski,
+  arthur_popout,
 };
 
 export const workData = [

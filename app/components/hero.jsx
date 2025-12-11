@@ -19,8 +19,9 @@ const HeaderSection = () => {
             <div>
                
                <Image
-                 src={assets.hero_image}
+                 src={assets.arthur_popout}
                  alt="Hero Image"
+                 width={600}
                 
                  className="object-contain "
                 />
