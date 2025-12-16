@@ -88,7 +88,7 @@ const Recentworks = () => {
             </h2>
           </div>
 
-          <span className="font-extrabold uppercase text-4xl [-webkit-text-stroke:2px_#FFFFFF] md:text-[9.5vw] text-[#FF0000] md:[-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] md:scale-y-150 scale-y-250">
+          <span className="font-extrabold uppercase text-4xl [-webkit-text-stroke:1.5px_#FFFFFF] md:text-[9.5vw] text-[#FF0000] md:[-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] md:scale-y-150 scale-y-250">
             RECENT WORK$
           </span>
 
@@ -102,7 +102,7 @@ const Recentworks = () => {
             <MobileHorizontalCarousel />
           </div>
 
-          <div className="flex h-20 items-center justify-center" />
+          <div className="flex h-10 md:h-20 items-center justify-center" />
         </div>
       </div>
     </section>
@@ -116,11 +116,11 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-30%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-38%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
-      <div className="sticky top-25 flex overflow-hidden">
+      <div className="sticky  top-25 flex overflow-hidden">
         <motion.div style={{ x }} className="flex gap-2">
           {cards.map((card) => {
             return <DesktopCard card={card} key={card.id} />;
@@ -135,7 +135,7 @@ const HorizontalScrollCarousel = () => {
 const MobileHorizontalCarousel = () => {
   return (
     <div className="w-full overflow-x-auto snap-x snap-proximity scrollbar-hide">
-      <div className="flex gap-4  w-max-full">
+      <div className="flex pl-2 gap-4 w-max-full">
         {cards.map((card) => (
           <MobileCard card={card} key={card.id} />
         ))}
@@ -193,4 +193,6 @@ const cards = [
   { url: "/work-boroughs.jpg", title: "Boroughs", id: 2, target: "boroughs" },
   { url: "/work-liliana.jpg", title: "Liliana", id: 4, target: "liliana" },
   { url: "/work-vanderlande.jpg", title: "Vanderlande", id: 3, target: "vanderlande" },
+  { url: "/work-nathalie.jpg", title: "Nathalie", id: 5, target: "nathalie" },
+  
 ];
