@@ -26,3 +26,11 @@ html {
 .scroll-offset {
   scroll-margin-top: var(--header-offset);
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

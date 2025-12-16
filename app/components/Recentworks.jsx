@@ -1,10 +1,9 @@
-﻿import { motion, useTransform, useScroll } from "framer-motion";
+﻿
+import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { assets } from '@/assets/assets'
-
-
+import { assets } from "@/assets/assets";
 
 const Recentworks = () => {
   useEffect(() => {
@@ -18,26 +17,26 @@ const Recentworks = () => {
         const rotation = (angle * 180) / Math.PI + 90;
         eye.style.transform = `rotate(${rotation}deg)`;
       }
-    }
+    };
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-    }
+    };
   }, []);
-
 
   return (
     <section className="relative w-full z-10 mt-8 md:mt-12 lg:mt-30">
       <div className="relative flex items-center justify-center ">
         <div className="w-full max-w-[95vw] bg-blue-600 rounded-lg border-2 border-black-700 ">
-          <h1 className="text-center mb-2 text-2xl md:text-[3vw] font-figtree font-black text-[#FF0000]  [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] py-5 lg:py-10">My bag consists of:</h1>
+          <h1 className="text-center mb-2 text-2xl md:text-[3vw] font-figtree font-black text-[#FF0000]  [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] py-5 lg:py-10">
+            My bag consists of:
+          </h1>
           <ul className="text-[#F7FD06] lg:[-webkit-text-stroke:2px_#000000] [-webkit-text-stroke:1.5px_#000000] text-[9vw] lg:text-7xl font-inter font-extrabold flex flex-col items-center lg:gap-6">
             <li className="relative w-full max-w-3xl flex justify-center items-center lg:py-3">
               <span className="text-center">Digital Design</span>
               <Image
                 src={assets.works_digitaldesign}
                 alt="Digital Design"
-                
                 className="w-15 md:w-30 lg:w-50 pointer-events-none absolute left-4 top-1/5 -translate-y-1/2 md:left-9 lg:-left-6"
               />
             </li>
@@ -47,7 +46,6 @@ const Recentworks = () => {
               <Image
                 src={assets.works_webdesign}
                 alt="Web Design"
-                
                 className="w-25 md:w-40 lg:w-60 pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 md:right-10 lg:right-1"
               />
             </li>
@@ -57,7 +55,6 @@ const Recentworks = () => {
               <Image
                 src={assets.works_direction}
                 alt="Direction & Vision"
-                
                 className="w-30 md:w-40 lg:w-60 pointer-events-none absolute -left-9 top-1/7 -translate-y-1/2 md:-left-4 md:top-1/5 lg:-left-15 lg:top-1/8"
               />
             </li>
@@ -67,17 +64,13 @@ const Recentworks = () => {
               <Image
                 src={assets.eye}
                 alt="Graphic Interaction"
-                
-
-                className=" w-15 md:w-30 lg:w-50 eye pointer-events-none absolute right-6 top-1/5 -translate-y-1/2 md:right-16 lg:-right-10 lg:top-1/14"
-              /><Image
+                className=" w-15 md:w-30 lg:w-40 eye pointer-events-none absolute right-6 top-1/5 -translate-y-1/2 md:right-16 lg:-right-6 lg:top-1/14"
+              />
+              <Image
                 src={assets.eye}
                 alt="Graphic Interaction"
-                
-
-                className=" w-15 md:w-30 lg:w-50 eye pointer-events-none absolute -right-3 top-1/5 -translate-y-1/2 lg:-right-40"
+                className=" w-15 md:w-30 lg:w-40 eye pointer-events-none absolute -right-3 top-1/5 -translate-y-1/2 lg:-right-30"
               />
-              
             </li>
 
             <li className="relative w-full max-w-3xl flex justify-center items-center py-3">
@@ -85,33 +78,38 @@ const Recentworks = () => {
               <Image
                 src={assets.works_storytelling}
                 alt="Visual Storytelling"
-                
                 className="w-20 md:w-40 lg:w-60 pointer-events-none absolute -left-2 top-1/2 -translate-y-1/2  z-0 lg:-left-5"
               />
             </li>
           </ul>
           <div className="mt-10 mb-10 px-5 flex justify-center">
-            <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">For every project I pick up, one thing always has to come through, personality. I dont believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the clients. If it doesnt stand out, its not worth making.</h2>
+            <h2 className="max-w-3xl text-center lg:text-3xl font-figtree font-bold text-[#F7FD06]">
+              For every project I pick up, one thing always has to come through, personality. I dont believe in blending in or creating just for the sake of it. Everything I design needs to feel like something, carry intention, and reflect either my identity or the clients. If it doesnt stand out, its not worth making.
+            </h2>
           </div>
 
-
-          <span className="font-extrabold uppercase text-4xl md:text-[9.5vw] text-[#FF0000] [-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] scale-y-150">
+          <span className="font-extrabold uppercase text-5xl [-webkit-text-stroke:2px_#FFFFFF] md:text-[9.5vw] text-[#FF0000] md:[-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] md:scale-y-150 scale-y-250">
             RECENT WORK$
           </span>
-          <HorizontalScrollCarousel />
-          <div className="flex h-20 items-center justify-center">
 
+          {/* Desktop horizontal scroll (framer-motion) */}
+          <div className="hidden md:block">
+            <HorizontalScrollCarousel />
           </div>
+
+          {/* Mobile horizontal scroll (CSS scroll-snap, native) */}
+          <div className="md:hidden px-4 pb-8">
+            <MobileHorizontalCarousel />
+          </div>
+
+          <div className="flex h-20 items-center justify-center" />
         </div>
-
-
       </div>
     </section>
+  );
+};
 
-
-  )
-}
-
+/* Desktop Horizontal Scroll (Framer Motion) */
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -125,7 +123,7 @@ const HorizontalScrollCarousel = () => {
       <div className="sticky top-25 flex overflow-hidden">
         <motion.div style={{ x }} className="flex gap-2">
           {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
+            return <DesktopCard card={card} key={card.id} />;
           })}
         </motion.div>
       </div>
@@ -133,12 +131,30 @@ const HorizontalScrollCarousel = () => {
   );
 };
 
-const Card = ({ card }) => {
+/* Mobile Horizontal Scroll (CSS Scroll-Snap) */
+const MobileHorizontalCarousel = () => {
   return (
-    <Link href={`/projects#${card.target}`} className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg " aria-label={card.title}>
-      <div className="absolute inset-0 z-0 ">
+    <div className="w-full overflow-x-auto snap-x snap-proximity scrollbar-hide">
+      <div className="flex gap-4 pb-4 w-max">
+        {cards.map((card) => (
+          <MobileCard card={card} key={card.id} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* Desktop Card */
+const DesktopCard = ({ card }) => {
+  return (
+    <Link
+      href={`/projects#${card.target}`}
+      className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg flex-shrink-0"
+      aria-label={card.title}
+    >
+      <div className="absolute inset-0 z-0">
         <Image
-          src={card.url}               
+          src={card.url}
           alt={card.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110 "
@@ -149,12 +165,32 @@ const Card = ({ card }) => {
   );
 };
 
-export default Recentworks
+/* Mobile Card (scroll-snap align) */
+const MobileCard = ({ card }) => {
+  return (
+    <Link
+      href={`/projects#${card.target}`}
+      className="group relative h-100 w-70 overflow-hidden bg-neutral-200 rounded-lg flex-shrink-0 snap-center"
+      aria-label={card.title}
+    >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={card.url}
+          alt={card.title}
+          fill
+          className="object-cover transition-transform duration-300 group-active:scale-110"
+          priority={false}
+        />
+      </div>
+    </Link>
+  );
+};
+
+export default Recentworks;
 
 const cards = [
-  { url: '/work-heyyou.svg', title: 'HeyYou', id: 1, target: 'heyyou' }, // files in public folder/
-  { url: '/work-boroughs.jpg', title: 'Boroughs', id: 2, target: 'boroughs' },
-  { url: '/work-liliana.jpg', title: 'Liliana', id: 4, target: 'liliana' },
-  { url: '/work-vanderlande.jpg', title: 'Vanderlande', id: 3, target: 'vanderlande' },
-  
+  { url: "/work-heyyou.svg", title: "HeyYou", id: 1, target: "heyyou" },
+  { url: "/work-boroughs.jpg", title: "Boroughs", id: 2, target: "boroughs" },
+  { url: "/work-liliana.jpg", title: "Liliana", id: 4, target: "liliana" },
+  { url: "/work-vanderlande.jpg", title: "Vanderlande", id: 3, target: "vanderlande" },
 ];
