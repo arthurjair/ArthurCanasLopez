@@ -213,9 +213,9 @@ export default function Projects() {
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
                             {[
-                              { type: 'img', src: assets.vanderlande_image1 },
                               { type: 'img', src: assets.work_vanderlande },
-                              { type: 'text', title: 'Vanderlande', subtitle: 'Website Made with Wix Studio' },
+                              { type: 'img', src: assets.vanderlande_image1 },
+                              { type: 'text', title: 'Vanderlande', subtitle: 'App - Smart Mobile 2025' },
                               { type: 'img', src: assets.vanderlande_image3 },
                               { type: 'img', src: assets.vanderlande_image2 },
                               
@@ -238,11 +238,57 @@ export default function Projects() {
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      Liliana Erasmus is a Aruban-Dutch writer and illustrator who has been creating childrens books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
-                                      She recently reached out to me to rebrand and redesign her website, as her previous one no longer reflected her experience or personality as an artist. My goal was to give her a fresh, modern online presence that still felt warm, creative, and true to her storytelling style. The new design focuses on showcasing her books, art, and background in a more engaging and personal way.
+                                      For my final project in the Smart Mobile semester, our client was Vanderlande, who asked us to improve their existing trend report. My group and I decided to give it a more visual and engaging direction, turning it into an experience rather than a plain document.{"\n\n"}
+                                      I contributed mainly to the layout, visual style, and tone of voice of the project. I took inspiration from other creative trend reports like IKEA At Home and the CSCS Report, both known for their strong storytelling and visual design which we aimed to bring to Vanderlande’s version.
+
+
                                       
                                     </p>
                                     <button className=' bg-black text-white rounded-lg p-2 mt-5 '>Coming Soon!</button>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="nathalie" className='Nathalie p-5'>
+                      <div className="flex overflow-hidden items-start gap-8">
+                        <div className="flex-1">
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
+                            {[ 
+                              { type: 'img', src: assets.work_nathalie },
+                              { type: 'img', src: assets.nathalie_image1 },
+                              { type: 'text', title: 'Nathalie Silverentand', subtitle: ' Website Redesign - Semester 2 2024' },
+                              { type: 'img', src: assets.nathalie_image2 },
+                              { type: 'img', src: assets.nathalie_image3 },
+                              { type: 'img', src: assets.nathalie_image4 },
+                            ].map((item, i) => (
+                              <div
+                                key={i}
+                                className="mb-4 break-inside-avoid w-full pb-3"
+                                onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
+                              >
+                                {item.type === 'img' ? (
+                                  <Image
+                                    src={item.src}
+                                    alt={`work-${i}`}
+                                    width={600}
+                                    height={900}
+                                    className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
+                                  />
+                                ) : (
+                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
+                                    <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
+                                    <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
+                                    <p className="text-xl whitespace-pre-line">
+                                      One of my first design projects was for Nathalie Silverentand, a Dutch painter.
+                                      In semester 2, we got the assignment to help her rebrand and build a website that matched who she is as an artist. It was one of the first times we had real creative control, and we got to push things far enough to make something genuinely cool.{"\n\n"}
+                                      We stayed in close contact with Nathalie throughout the process and showed her multiple iterations along the way. But as the deadline got closer, we decided to keep the final version a surprise because the direction we chose was a pretty big shift. Definitely a risk.{"\n\n"}
+                                      Turns out it paid off: she loved it, and she ended up using our rebrand on her socials too. More than anything, this project taught me to not be afraid of doing something different and to keep trying new ideas. High risk, big reward.
+                                    </p>
                                   </div>
                                 )}
                               </div>
