@@ -49,12 +49,12 @@ const Navigationbar = ({ isInline = false }) => {
               src={assets.logo_portfolio}
               alt="Logo"
               
-              className="w-15 md:w-25 lg:w-30 cursor-pointer mr-4 pl-2"
+              className="w-15 md:w-25 lg:w-30 cursor-pointer mr-4 "
             />
           </Link>
 
           {/* nav items (right) */}
-          <ul className="hidden md:flex items-center md:gap-4  lg:gap-8 py-3 p-2 ">
+          <ul className="hidden md:flex  items-center md:gap-3 md:mr-4 lg:gap-8 py-3 p-2 ">
             <li className="relative overflow-visible">
               <Link
                 href="/"
@@ -63,13 +63,13 @@ const Navigationbar = ({ isInline = false }) => {
               >
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-4 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
-                    <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
+                    <Image src={assets.icon_home} alt="Home icon" className="md:w-5 md:h-7" />
                     <span className="text-sm font-medium">HOME</span>
                   </span>
                 </div>
 
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
-                  <Image src={assets.icon_home} alt="Home icon" width={28} height={28} />
+                  <Image src={assets.icon_home} alt="Home icon" className="md:w-5 md:h-7" />
                   <span className="text-sm font-medium">HOME</span>
                 </div>
               </Link>
@@ -83,13 +83,13 @@ const Navigationbar = ({ isInline = false }) => {
               >
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-4 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
-                    <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />
+                    <Image src={assets.icon_projects} alt="Projects icon" className="md:w-5 md:h-7" />
                     <span className="text-sm font-medium">PROJECTS</span>
                   </span>
                 </div>
 
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
-                  <Image src={assets.icon_projects} alt="Projects icon" width={28} height={28} />
+                  <Image src={assets.icon_projects} alt="Projects icon" className="md:w-5 md:h-7" />
                   <span className="text-sm font-medium">PROJECTS</span>
                 </div>
               </Link>
@@ -103,13 +103,13 @@ const Navigationbar = ({ isInline = false }) => {
               >
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-7 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
-                    <Image src={assets.icon_aboutme} alt="About icon" className="md:w-8 md:h-8" />
+                    <Image src={assets.icon_aboutme} alt="About icon" className="md:w-5 md:h-7 " />
                     <span className="text-sm font-medium">ABOUT</span>
                   </span>
                 </div>
 
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
-                  <Image src={assets.icon_aboutme} alt="About icon" className="md:w-8 md:h-8"  />
+                  <Image src={assets.icon_aboutme} alt="About icon" className="md:w-5 md:h-7"  />
                   <span className="text-sm font-medium">ABOUT ME</span>
                 </div>
               </Link>
