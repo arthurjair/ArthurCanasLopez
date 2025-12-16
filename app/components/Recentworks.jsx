@@ -55,7 +55,7 @@ const Recentworks = () => {
               <Image
                 src={assets.works_direction}
                 alt="Direction & Vision"
-                className="w-30 md:w-40 lg:w-60 pointer-events-none absolute -left-9 top-1/7 -translate-y-1/2 md:-left-4 md:top-1/5 lg:-left-15 lg:top-1/8"
+                className="w-25 md:w-40 lg:w-60 pointer-events-none absolute -left-6 top-1/7 -translate-y-1/2 md:-left-4 md:top-1/5 lg:-left-15 lg:top-1/8"
               />
             </li>
 
@@ -88,7 +88,7 @@ const Recentworks = () => {
             </h2>
           </div>
 
-          <span className="font-extrabold uppercase text-5xl [-webkit-text-stroke:2px_#FFFFFF] md:text-[9.5vw] text-[#FF0000] md:[-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] md:scale-y-150 scale-y-250">
+          <span className="font-extrabold uppercase text-4xl [-webkit-text-stroke:2px_#FFFFFF] md:text-[9.5vw] text-[#FF0000] md:[-webkit-text-stroke:4.5px_#FFFFFF] font-inter flex justify-center mt-20  mb-15 bg-[#FFF200] md:scale-y-150 scale-y-250">
             RECENT WORK$
           </span>
 
@@ -98,7 +98,7 @@ const Recentworks = () => {
           </div>
 
           {/* Mobile horizontal scroll (CSS scroll-snap, native) */}
-          <div className="md:hidden px-4 pb-8">
+          <div className="md:hidden pb-8">
             <MobileHorizontalCarousel />
           </div>
 
@@ -135,7 +135,7 @@ const HorizontalScrollCarousel = () => {
 const MobileHorizontalCarousel = () => {
   return (
     <div className="w-full overflow-x-auto snap-x snap-proximity scrollbar-hide">
-      <div className="flex gap-4 pb-4 w-max">
+      <div className="flex gap-4  w-max-full">
         {cards.map((card) => (
           <MobileCard card={card} key={card.id} />
         ))}
