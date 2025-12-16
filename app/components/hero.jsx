@@ -29,9 +29,9 @@ const HeaderSection = () => {
                <Image
                  src={assets.arthur_popout}
                  alt="Hero Image"
-                 className="object-contain w-70 md:w-90 lg:w-120 mx-auto "
+                 className="object-contain w-70 md:w-80 lg:w-120 mx-auto "
                 />
-                <h2 className="text-3xl p-5 lg:text-4xl font-figtree font-extrabold text-[#FF0000] [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] ">
+                <h2 className="text-3xl p-5 lg:text-6xl font-figtree font-extrabold text-[#FF0000] [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] ">
                  My name is ARTHUR and I create stuff.
                 </h2>
                <p className="  text-md lg:text-3xl font-inter font-black text-[#15E70D] [-webkit-text-stroke:.5px_#AC09C9] lg:[-webkit-text-stroke:1px_#AC09C9]  ">
@@ -47,7 +47,7 @@ const HeaderSection = () => {
 
           <div className='flex justify-end '>
             <Image src={assets.hero_swag} alt="Swag" 
-              className="w-10 md:w-15 lg:w-25 pointer-events-none  "
+              className="w-12 md:w-15 lg:w-25 pointer-events-none  "
             
             
             />

@@ -48,14 +48,13 @@ const Navigationbar = ({ isInline = false }) => {
             <Image
               src={assets.logo_portfolio}
               alt="Logo"
-              width={30}
-              height={32}
-              className="w-[8vw] cursor-pointer mr-4"
+              
+              className="w-15 md:w-25 lg:w-30 cursor-pointer mr-4 pl-2"
             />
           </Link>
 
           {/* nav items (right) */}
-          <ul className="hidden md:flex items-center lg:gap-8 py-3">
+          <ul className="hidden md:flex items-center md:gap-4  lg:gap-8 py-3 p-2 ">
             <li className="relative overflow-visible">
               <Link
                 href="/"
@@ -104,13 +103,13 @@ const Navigationbar = ({ isInline = false }) => {
               >
                 <div className="absolute -left-2 top-1 z-0 bg-black rounded-md px-7 py-2 flex items-center gap-3">
                   <span className="opacity-0 flex items-center gap-3">
-                    <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />
+                    <Image src={assets.icon_aboutme} alt="About icon" className="md:w-8 md:h-8" />
                     <span className="text-sm font-medium">ABOUT</span>
                   </span>
                 </div>
 
                 <div className="relative z-10 bg-white rounded-md px-4 py-2 flex items-center gap-3 transform transition-all duration-150 group-active:translate-y-1">
-                  <Image src={assets.icon_aboutme} alt="About icon" width={28} height={28} />
+                  <Image src={assets.icon_aboutme} alt="About icon" className="md:w-8 md:h-8"  />
                   <span className="text-sm font-medium">ABOUT ME</span>
                 </div>
               </Link>
