@@ -209,15 +209,19 @@ export default function Projects() {
                       </div>
                     </div>
                     <div id="vanderlande" className='Vanderlande p-5'>
-                        <div className="flex overflow-x-hidden items-start gap-8">
+                        <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
+                          <div className="columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-6 ">   
                             {[
-                              { type: 'img', src: assets.work_vanderlande },
-                              { type: 'img', src: assets.vanderlande_image1 },
+
                               { type: 'text', title: 'Vanderlande', subtitle: 'App - Smart Mobile 2025' },
+                              
+                              { type: 'img', src: assets.vanderlande_image1 },
+                              { type: 'img', src: assets.work_vanderlande },
                               { type: 'img', src: assets.vanderlande_image3 },
+                              { type: 'img', src: assets.vanderlande_image4 },
                               { type: 'img', src: assets.vanderlande_image2 },
+                              
                               
                             ].map((item, i) => (
                               <div
@@ -244,7 +248,7 @@ export default function Projects() {
 
                                       
                                     </p>
-                                    <button className=' bg-black text-white rounded-lg p-2 mt-5 '>Coming Soon!</button>
+                                    
                                   </div>
                                 )}
                               </div>
@@ -255,9 +259,9 @@ export default function Projects() {
                     </div>
 
                     <div id="nathalie" className='Nathalie p-5'>
-                      <div className="flex overflow-hidden items-start gap-8">
+                      <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
+                          <div className="columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-6 ">   
                             {[ 
                               { type: 'img', src: assets.work_nathalie },
                               { type: 'img', src: assets.nathalie_image1 },
