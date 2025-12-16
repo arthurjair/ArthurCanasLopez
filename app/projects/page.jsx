@@ -49,17 +49,17 @@ export default function Projects() {
     <>
        <section className="relative w-full  ">
           {/* Blue container (now wraps nav + content) */}
-         <div className="relative z-20 flex items-center justify-center py-12 md:py-0">
+         <div className="relative z-20 flex items-center justify-center md:py-0">
              <div className="w-full max-w-[95vw]  bg-[#E34C9D] rounded-lg border-2 border-black-700 p-1 mt-5">
                  {/* Navbar inside the container (moved to component) */}
                    <Navigationbar isInline={true} />
 
                  {/* Hero content */}
           
-                 <div className="my-4  pt-30">
-                    <div className="mt-10 mb-10 px-5 flex relative items-center flex-col gap-12 text-center">
-                        <div className='absolute z-2  left-1/5 -translate-y-3/5 '> <Image width={250} height={80} src={assets.projects_smiski} alt="Projects Smiski" /></div>
-                        <h1 className="flex relative text-3xl  lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
+                 <div className="my-4 pt-10 md:pt-30">
+                    <div className="md:mt-10 mb-10 md:px-5 flex relative items-center flex-col gap-12 text-center">
+                        <div className='absolute z-2  left-1/20  -translate-y-2/3 md:left-1/6 lg:left-2/10 lg:-translate-y-2/3 '> <Image  src={assets.projects_smiski} alt="Projects Smiski" className='w-30 md:w-40 lg:w-50' /></div>
+                        <h1 className="flex relative text-6xl md:text-8xl  lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:1.5px_#000000] lg:[-webkit-text-stroke:2.5px_#000000] scale-y-150 ">PROJECTS</h1>
                         <p className='max-w-3xl text-center lg:text-4xl  '>From websites, posters, apps, logos, and animation. Ive been learning a lot and creating work Im really proud of. Heres a look at my progress so far.</p>
 
                     </div>
@@ -67,7 +67,7 @@ export default function Projects() {
                     <div id="heyyou" className='Heyyou p-5'>
                       <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
                             {[ 
                               { type: 'img', src: assets.work_heyyou },
                               { type: 'img', src: assets.heyyou_image1 },
@@ -110,7 +110,7 @@ export default function Projects() {
                     <div id="boroughs" className='Boroughs p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6">   
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">   
                             {[
                               { type: 'img', src: assets.work_boroughs },
                               { type: 'text', title: 'Boroughs', subtitle: ' App + Self thought - Smart Mobile 2025' },
@@ -162,12 +162,13 @@ export default function Projects() {
                           </div>
                         </div>
                       </div>
+                      
 
                     </div>
                     <div id="liliana" className='Liliana p-5'>
                         <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
                             {[
                               { type: 'img', src: assets.liliana_image1 },
                               { type: 'img', src: assets.work_liliana },
@@ -208,16 +209,16 @@ export default function Projects() {
                       </div>
                     </div>
                     <div id="vanderlande" className='Vanderlande p-5'>
-                        <div className="flex overflow-visible items-start gap-8">
+                        <div className="flex overflow-x-hidden items-start gap-8">
                         <div className="flex-1">
-                          <div className="columns-1 sm:columns-2 md:columns-3 gap-6 ">   
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
                             {[
+                              { type: 'img', src: assets.vanderlande_image1 },
                               { type: 'img', src: assets.work_vanderlande },
-                              { type: 'img', src: assets.vanderlande_image1},
-                              { type: 'text', title: 'Vanderlande Trends App', subtitle: 'Industry Project - Smart Mobile 2025' },
+                              { type: 'text', title: 'Vanderlande', subtitle: 'Website Made with Wix Studio' },
                               { type: 'img', src: assets.vanderlande_image3 },
                               { type: 'img', src: assets.vanderlande_image2 },
-                              { type: 'img', src: assets.vanderlande_image4 },
+                              
                             ].map((item, i) => (
                               <div
                                 key={i}
@@ -237,11 +238,11 @@ export default function Projects() {
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      For my final project in the Smart Mobile semester, our client was Vanderlande, who asked us to improve their existing trend report. My group and I decided to give it a more visual and engaging direction, turning it into an experience rather than a plain document.{"\n\n"}
-                                      I contributed mainly to the layout, visual style, and tone of voice of the project. I took inspiration from other creative trend reports like IKEA At Home and the CSCS Report, both known for their strong storytelling and visual design which we aimed to bring to Vanderlandes version.
-                                      
+                                      Liliana Erasmus is a Aruban-Dutch writer and illustrator who has been creating childrens books for over 20 years. Her stories often celebrate imagination, culture, and family values that come through in both her writing and illustrations.{"\n\n"}
+                                      She recently reached out to me to rebrand and redesign her website, as her previous one no longer reflected her experience or personality as an artist. My goal was to give her a fresh, modern online presence that still felt warm, creative, and true to her storytelling style. The new design focuses on showcasing her books, art, and background in a more engaging and personal way.
                                       
                                     </p>
+                                    <button className=' bg-black text-white rounded-lg p-2 mt-5 '>Coming Soon!</button>
                                   </div>
                                 )}
                               </div>
@@ -249,8 +250,8 @@ export default function Projects() {
                           </div>
                         </div>
                       </div>
-
                     </div>
+                    
                     
                  </div>
              </div>
