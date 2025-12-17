@@ -31,7 +31,7 @@ const EmailButton = () => {
         <button
           onClick={handleCopy}
           className="relative block rounded-lg bg-white px-6 py-4 text-center font-bold text-black transition-all duration-300 hover:-translate-x-0.5 hover:translate-y-0.5 text-md md:px-5 md:py-5 md:text-3xl lg:px-9 lg:py-6 lg:text-5xl ">
-          <h1>artuurocanasr@gmail.com</h1>
+          <h1>artuurocanas@gmail.com</h1>
         </button>
       </div>
     </div>
