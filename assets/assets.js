@@ -41,6 +41,7 @@ import nathalie_image1 from './nathalie-image1.png';
 import nathalie_image2 from './nathalie-image2.png';
 import nathalie_image3 from './nathalie-image3.png';
 import nathalie_image4 from './nathalie-image4.png';
+import construction from './under-construction.gif';
 
 
 
@@ -88,6 +89,7 @@ export const assets = {
   nathalie_image2,
   nathalie_image3,
   nathalie_image4,
+  construction,
 };
 
 export const workData = [
