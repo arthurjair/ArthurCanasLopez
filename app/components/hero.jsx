@@ -15,11 +15,11 @@ const HeaderSection = () => {
 
           {/* Hero content */}
           
-          <div className="  justify-center  text-center mt-10 md:mt-40  ">
+          <div className="  justify-center  text-center mt-10 md:mt-30  ">
             
             <div className="grid md:grid-cols-2 p-2 ">
               <div>
-               <h1 className=" md:mt-10 md:mb-10 mb-5  text-7xl scale-y-150 md:text-8xl lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:1.5px_#000000] md:[-webkit-text-stroke:2px_#000000] lg:[-webkit-text-stroke:4px_#000000]  ">
+               <h1 className=" md:mt-20 md:mb-10 mb-5  text-7xl scale-y-150  md:text-8xl lg:text-[12vw] font-figtree font-black text-[#F7FD06] [-webkit-text-stroke:1.5px_#000000] md:[-webkit-text-stroke:2px_#000000] lg:[-webkit-text-stroke:4px_#000000]  ">
                  WHAT'S <br />GOOD!
                </h1>
                
@@ -29,7 +29,7 @@ const HeaderSection = () => {
                <Image
                  src={assets.arthur_popout}
                  alt="Hero Image"
-                 className="object-contain w-70 md:w-80 lg:w-120 mx-auto "
+                 className="object-contain w-70 md:w-80 lg:w-135 mx-auto "
                 />
                 <h2 className="text-3xl p-5 lg:text-6xl font-figtree font-extrabold text-[#FF0000] [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] ">
                  My name is ARTHUR and I create stuff.
