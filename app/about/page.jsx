@@ -21,7 +21,7 @@ export default function Projects() {
 
                   {/* About Me content */}
                   <div>
-                    <h1 className='font-inter text-4xl font-black md:text-5xl lg:text-9xl text-[#F7FD06]  text-center pt-30 scale-y-150'> UNDER CONSTRUCTION!</h1>
+                    <h1 className='font-inter text-4xl font-black md:text-5xl lg:text-9xl text-[#F7FD06]  text-center mt-20 lg:mt-40 scale-y-150'> UNDER CONSTRUCTION!</h1>
                     <div>
                       <Image
                         src={assets.construction}
