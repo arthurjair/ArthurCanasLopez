@@ -32,7 +32,7 @@ const HeaderSection = () => {
                  className="object-contain w-70 md:w-80 lg:w-135 mx-auto "
                 />
                 <h2 className="text-3xl p-5 lg:text-6xl font-figtree font-extrabold text-[#FF0000] [-webkit-text-stroke:1px_#FFFFFF] lg:[-webkit-text-stroke:2px_#FFFFFF] ">
-                 My name is ARTHUR and I create stuff.
+                 My name is ARTHUR and I make stuff.
                 </h2>
                <p className="  text-md lg:text-3xl font-inter font-black text-[#15E70D] [-webkit-text-stroke:.5px_#AC09C9] lg:[-webkit-text-stroke:1px_#AC09C9]  ">
                 Check out my work below!
