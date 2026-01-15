@@ -189,10 +189,10 @@ const MobileCard = ({ card }) => {
 export default Recentworks;
 
 const cards = [
-  { url: "/work-heyyou.svg", title: "HeyYou", id: 1, target: "heyyou" },
-  { url: "/work-boroughs.jpg", title: "Boroughs", id: 2, target: "boroughs" },
-  { url: "/work-liliana.jpg", title: "Liliana", id: 4, target: "liliana" },
-  { url: "/work-vanderlande.jpg", title: "Vanderlande", id: 3, target: "vanderlande" },
-  { url: "/work-nathalie.jpg", title: "Nathalie", id: 5, target: "nathalie" },
+  { url: "/work-heyyou.webp", title: "HeyYou", id: 1, target: "heyyou" },
+  { url: "/work-boroughs.webp", title: "Boroughs", id: 2, target: "boroughs" },
+  { url: "/work-liliana.webp", title: "Liliana", id: 4, target: "liliana" },
+  { url: "/work-vanderlande.webp", title: "Vanderlande", id: 3, target: "vanderlande" },
+  { url: "/work-nathalie.webp", title: "Nathalie", id: 5, target: "nathalie" },
   
 ];
