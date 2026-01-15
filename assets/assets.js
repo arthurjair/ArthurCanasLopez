@@ -36,7 +36,7 @@ import vanderlande_image3 from './vanderlande-image3.png';
 import vanderlande_image4 from './vanderlande-image4.png';
 import projects_smiski from './projects-smiski.svg';
 import arthur_popout from './arthur-popout4.png';
-import work_nathalie from './nathalie-silverentand.webp';
+import work_nathalie from './work-nathalie.webp';
 import nathalie_image1 from './nathalie-image1.png';
 import nathalie_image2 from './nathalie-image2.png';
 import nathalie_image3 from './nathalie-image3.png';
