@@ -16,7 +16,7 @@ import works_graphicinteraction from './works-graphicinteraction.svg';
 import works_webdesign from './works-webdesign.svg';
 import works_storytelling from './works-storytelling.svg';
 import eye from './eye.svg';
-import work_heyyou from './work-heyyou.webp';
+import work_heyyou from './work-heyyou.svg';
 import heyyou_image1 from './heyyou-image1.png';
 import heyyou_image2 from './heyyou-image2.jpg';
 import heyyou_image3 from './heyyou-image3.png';
