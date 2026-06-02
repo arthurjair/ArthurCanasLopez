@@ -71,7 +71,7 @@ export default function Projects() {
                             {[ 
                               { type: 'img', src: assets.work_everythingmustgo },
                               { type: 'img', src: assets.everythingmustgo_image1 },
-                              { type: 'text', title: 'EverythingMustGo', subtitle: 'Website' },
+                              { type: 'text', title: 'Everything Must Go', subtitle: 'Website' },
                               { type: 'img', src: assets.everythingmustgo_image2 },
                               { type: 'img', src: assets.everythingmustgo_image3 },
                               { type: 'img', src: assets.everythingmustgo_image4 },
