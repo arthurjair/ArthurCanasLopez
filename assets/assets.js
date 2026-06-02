@@ -42,6 +42,11 @@ import nathalie_image2 from './nathalie-image2.png';
 import nathalie_image3 from './nathalie-image3.png';
 import nathalie_image4 from './nathalie-image4.png';
 import construction from './under-construction.gif';
+import work_everythingmustgo from './work-everythingmustgo.webp';
+import everythingmustgo_image1 from './everythingmustgo-image1.png';
+import everythingmustgo_image2 from './everythingmustgo-image2.png';
+import everythingmustgo_image3 from './everythingmustgo-image3.png';
+import everythingmustgo_image4 from './everythingmustgo-image4.png';
 
 
 
@@ -64,6 +69,11 @@ export const assets = {
   works_webdesign,
   works_storytelling,
   eye,
+  work_everythingmustgo,
+  everythingmustgo_image1,
+  everythingmustgo_image2,
+  everythingmustgo_image3,
+  everythingmustgo_image4,
   work_heyyou,
   heyyou_image1,
   heyyou_image2,

@@ -64,6 +64,49 @@ export default function Projects() {
 
                     </div>
 
+                    <div id="EverythingMustGo" className='EverythingMustGo p-5'>
+                      <div className="flex overflow-visible items-start gap-8">
+                        <div className="flex-1">
+                          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
+                            {[ 
+                              { type: 'img', src: assets.work_everythingmustgo },
+                              { type: 'img', src: assets.everythingmustgo_image1 },
+                              { type: 'text', title: 'EverythingMustGo', subtitle: 'Website' },
+                              { type: 'img', src: assets.everythingmustgo_image2 },
+                              { type: 'img', src: assets.everythingmustgo_image3 },
+                              { type: 'img', src: assets.everythingmustgo_image4 },
+                            ].map((item, i) => (
+                              <div
+                                key={i}
+                                className="mb-4 break-inside-avoid w-full pb-3"
+                                onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
+                              >
+                                {item.type === 'img' ? (
+                                  <Image
+                                    src={item.src}
+                                    alt={`work-${i}`}
+                                    width={600}
+                                    height={900}
+                                    className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
+                                  />
+                                ) : (
+                                  <div className="w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
+                                    <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
+                                    <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
+                                    <p className="text-xl whitespace-pre-line">
+                                      Imagine if your crush actually knew you existed ...well, now they can! With HeyYou, you simply add one of their social media profiles, and the app gathers all their public information for you.{"\n\n"}
+                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to get to know someone before they even know you.{"\n\n"}
+                                      Its meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
+                                    </p>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <div id="heyyou" className='Heyyou p-5'>
                       <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
