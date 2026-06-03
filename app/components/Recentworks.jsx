@@ -189,7 +189,7 @@ const MobileCard = ({ card }) => {
 export default Recentworks;
 
 const cards = [
-  { url: "/work-everythingmg.webp", title: "EverythingMustGo", id: 1, target: "EMG" },
+  { url: "/work-everythingmustgo.webp", title: "EverythingMustGo", id: 1, target: "EMG" },
   { url: "/work-heyyou.webp", title: "HeyYou", id: 2, target: "heyyou" },
   { url: "/work-boroughs.webp", title: "Boroughs", id: 3, target: "boroughs" },
   { url: "/work-liliana.webp", title: "Liliana", id: 4, target: "liliana" },
