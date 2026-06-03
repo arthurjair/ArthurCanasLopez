@@ -7,7 +7,7 @@ const EmailButton = () => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText('arthur2004jair@gmail.com')
+      await navigator.clipboard.writeText('artuurocanas@gmail.com')
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
     } catch (err) {
