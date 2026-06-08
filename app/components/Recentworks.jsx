@@ -1,4 +1,5 @@
 ﻿
+import { motion, useTransform, useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,52 +7,20 @@ import { assets } from "@/assets/assets";
 
 const Recentworks = () => {
   useEffect(() => {
-    const canTrackPointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!canTrackPointer) {
-      return;
-    }
-
-    const eyes = Array.from(document.getElementsByClassName("eye"));
-    if (eyes.length === 0) {
-      return;
-    }
-
-    let rafId = null;
-    let latestEvent = null;
-
-    const updateEyes = () => {
-      rafId = null;
-
-      if (!latestEvent) {
-        return;
-      }
-
-      for (const eye of eyes) {
+    const eyes = document.getElementsByClassName("eye");
+    const handleMouseMove = (event) => {
+      for (let eye of eyes) {
         const rect = eye.getBoundingClientRect();
         const eyeX = rect.left + rect.width / 2;
         const eyeY = rect.top + rect.height / 2;
-        const angle = Math.atan2(latestEvent.clientY - eyeY, latestEvent.clientX - eyeX);
-        eye.style.rotate = `${(angle * 180) / Math.PI + 90}deg`;
+        const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX) + 180;
+        const rotation = (angle * 180) / Math.PI + 90;
+        eye.style.transform = `rotate(${rotation}deg)`;
       }
     };
-
-    const handlePointerMove = (event) => {
-      latestEvent = event;
-
-      if (rafId !== null) {
-        return;
-      }
-
-      rafId = window.requestAnimationFrame(updateEyes);
-    };
-
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId);
-      }
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -123,7 +92,7 @@ const Recentworks = () => {
             RECENT WORK$
           </span>
 
-          {/* Desktop horizontal scroll (native, lower jank) */}
+          {/* Desktop horizontal scroll (framer-motion) */}
           <div className="hidden md:block">
             <HorizontalScrollCarousel />
           </div>
@@ -140,188 +109,25 @@ const Recentworks = () => {
   );
 };
 
-/* Desktop Horizontal Scroll (native scroll-snap) */
+/* Desktop Horizontal Scroll (Framer Motion) */
 const HorizontalScrollCarousel = () => {
-  const carouselRef = useRef(null);
-  const loopWidthRef = useRef(0);
-  const dragStateRef = useRef({
-    isPointerDown: false,
-    isDragging: false,
-    isHovered: false,
-    startX: 0,
-    startScrollLeft: 0,
-    targetScrollLeft: 0,
-    currentScrollLeft: 0,
-    hasDragged: false,
-    pointerId: null,
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
   });
-  const suppressClickRef = useRef(false);
 
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) {
-      return;
-    }
-
-    const measureLoopWidth = () => {
-      loopWidthRef.current = carousel.scrollWidth / 2;
-    };
-
-    measureLoopWidth();
-
-    const resizeObserver = new ResizeObserver(() => {
-      measureLoopWidth();
-    });
-
-    resizeObserver.observe(carousel);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    let animationFrameId = null;
-
-    const tick = () => {
-      const carousel = carouselRef.current;
-      const dragState = dragStateRef.current;
-      const loopWidth = loopWidthRef.current;
-
-      if (!carousel || loopWidth <= 0) {
-        animationFrameId = window.requestAnimationFrame(tick);
-        return;
-      }
-
-      if (dragState.isDragging) {
-        const distance = dragState.targetScrollLeft - dragState.currentScrollLeft;
-        dragState.currentScrollLeft += distance * 0.18;
-      } else if (!dragState.isHovered) {
-        dragState.currentScrollLeft += .75;
-        while (dragState.currentScrollLeft >= loopWidth) {
-          dragState.currentScrollLeft -= loopWidth;
-          dragState.targetScrollLeft -= loopWidth;
-        }
-
-        while (dragState.currentScrollLeft < 0) {
-          dragState.currentScrollLeft += loopWidth;
-          dragState.targetScrollLeft += loopWidth;
-        }
-      }
-
-      carousel.scrollLeft = dragState.currentScrollLeft;
-      animationFrameId = window.requestAnimationFrame(tick);
-    };
-
-    animationFrameId = window.requestAnimationFrame(tick);
-
-    return () => {
-      window.cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  const handlePointerDown = (event) => {
-    const carousel = carouselRef.current;
-    if (!carousel || event.button !== 0) {
-      return;
-    }
-
-    const currentScrollLeft = carousel.scrollLeft;
-    dragStateRef.current = {
-      isPointerDown: true,
-      isDragging: false,
-      isHovered: true,
-      startX: event.clientX,
-      startScrollLeft: currentScrollLeft,
-      targetScrollLeft: currentScrollLeft,
-      currentScrollLeft,
-      hasDragged: false,
-      pointerId: event.pointerId,
-    };
-  };
-
-  const handlePointerMove = (event) => {
-    const carousel = carouselRef.current;
-    const dragState = dragStateRef.current;
-
-    if (!carousel || !dragState.isPointerDown) {
-      return;
-    }
-
-    const deltaX = event.clientX - dragState.startX;
-
-    if (!dragState.isDragging && Math.abs(deltaX) > 4) {
-      if (dragState.pointerId !== null) {
-        carousel.setPointerCapture(dragState.pointerId);
-      }
-
-      dragState.isDragging = true;
-      dragState.hasDragged = true;
-      suppressClickRef.current = true;
-    }
-
-    if (!dragState.isDragging) {
-      return;
-    }
-
-    dragState.targetScrollLeft = Math.max(0, Math.min(loopWidthRef.current, dragState.startScrollLeft - deltaX));
-  };
-
-  const endDrag = (event) => {
-    const carousel = carouselRef.current;
-    const dragState = dragStateRef.current;
-
-    if (carousel && dragState.pointerId !== null && carousel.hasPointerCapture(dragState.pointerId)) {
-      carousel.releasePointerCapture(dragState.pointerId);
-    }
-
-    dragState.isPointerDown = false;
-    dragState.isDragging = false;
-
-    dragState.currentScrollLeft = carousel ? carousel.scrollLeft : dragState.currentScrollLeft;
-    dragState.targetScrollLeft = dragState.currentScrollLeft;
-    dragState.hasDragged = false;
-    dragState.pointerId = null;
-    suppressClickRef.current = false;
-  };
-
-  const handleMouseEnter = () => {
-    dragStateRef.current.isHovered = true;
-  };
-
-  const handleMouseLeave = () => {
-    dragStateRef.current.isHovered = false;
-  };
-
-  const handleClickCapture = (event) => {
-    if (!suppressClickRef.current) {
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-    suppressClickRef.current = false;
-  };
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-48%"]);
 
   return (
-    <div
-      ref={carouselRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={endDrag}
-      onPointerCancel={endDrag}
-      onClickCapture={handleClickCapture}
-      className="w-full overflow-x-hidden scrollbar-hide pb-4 overscroll-x-contain select-none cursor-grab active:cursor-grabbing"
-    >
-      <div className="flex gap-4 px-4 w-max">
-        {carouselCards.map((card, index) => {
-          const isClone = index >= cards.length;
-          return <DesktopCard card={card} key={`${card.id}-${index}`} isClone={isClone} />;
-        })}
+    <section ref={targetRef} className="relative h-[200vh] ">
+      <div className="sticky  top-25 flex overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-2">
+          {cards.map((card) => {
+            return <DesktopCard card={card} key={card.id} />;
+          })}
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -339,14 +145,12 @@ const MobileHorizontalCarousel = () => {
 };
 
 /* Desktop Card */
-const DesktopCard = ({ card, isClone = false }) => {
+const DesktopCard = ({ card }) => {
   return (
     <Link
       href={`/projects#${card.target}`}
       className="group relative h-[550px] w-[450px] overflow-hidden bg-neutral-200 rounded-lg flex-shrink-0"
       aria-label={card.title}
-      aria-hidden={isClone}
-      tabIndex={isClone ? -1 : 0}
     >
       <div className="absolute inset-0 z-0">
         <Image
@@ -355,7 +159,6 @@ const DesktopCard = ({ card, isClone = false }) => {
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110 "
           priority={false}
-          sizes="(min-width: 768px) 450px, 100vw"
         />
       </div>
     </Link>
@@ -377,7 +180,6 @@ const MobileCard = ({ card }) => {
           fill
           className="object-cover transition-transform duration-300 group-active:scale-110"
           priority={false}
-          sizes="100vw"
         />
       </div>
     </Link>
@@ -387,14 +189,11 @@ const MobileCard = ({ card }) => {
 export default Recentworks;
 
 const cards = [
-  { url: "/work-everythingmustgo.webp", title: "EverythingMustGo", id: 1, target: "EverythingMustGo" },
+  { url: "/work-everythingmustgo.webp", title: "Everything Must Go", id: 1, target: "EMG" },
   { url: "/work-heyyou.webp", title: "HeyYou", id: 2, target: "heyyou" },
   { url: "/work-boroughs.webp", title: "Boroughs", id: 3, target: "boroughs" },
   { url: "/work-liliana.webp", title: "Liliana", id: 4, target: "liliana" },
   { url: "/work-vanderlande.webp", title: "Vanderlande", id: 5, target: "vanderlande" },
   { url: "/work-nathalie.webp", title: "Nathalie", id: 6, target: "nathalie" },
   
-  
 ];
-
-const carouselCards = [...cards, ...cards];

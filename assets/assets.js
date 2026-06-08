@@ -9,44 +9,44 @@ import logo_portfolio from './logo-portfolio.svg';
 import background from './background.png';
 import chat from './chat.svg';
 import goldfishes from './goldfishes.svg';
-import work_boroughs from './work-boroughs.jpg';
+import work_boroughs from './work-boroughs.webp';
 import works_digitaldesign from './works-digitaldesign.svg';
 import works_direction from './works-direction.svg';
 import works_graphicinteraction from './works-graphicinteraction.svg';
 import works_webdesign from './works-webdesign.svg';
 import works_storytelling from './works-storytelling.svg';
 import eye from './eye.svg';
-import work_heyyou from './work-heyyou.svg';
-import heyyou_image1 from './heyyou-image1.png';
-import heyyou_image2 from './heyyou-image2.jpg';
-import heyyou_image3 from './heyyou-image3.png';
-import heyyou_image4 from './heyyou-image4.png';
-import boroughs_image1 from './boroughs-image1.png';
-import boroughs_image2 from './boroughs-image2.png';
-import boroughs_image3 from './boroughs-image3.png';
+import work_heyyou from './work-heyyou.webp';
+import heyyou_image1 from './heyyou-image1.webp';
+import heyyou_image2 from './heyyou-image2.webp';
+import heyyou_image3 from './heyyou-image3.webp';
+import heyyou_image4 from './heyyou-image4.webp';
+import boroughs_image1 from './boroughs-image1.webp';
+import boroughs_image2 from './boroughs-image2.webp';
+import boroughs_image3 from './boroughs-image3.webp';
 import work_liliana from './work-liliana.webp';
-import liliana_image1 from './liliana-image1.png';
-import liliana_image2 from './liliana-image2.png';
-import liliana_image3 from './liliana-image3.png';
-import liliana_image4 from './liliana-image4.png';
+import liliana_image1 from './liliana-image1.webp';
+import liliana_image2 from './liliana-image2.webp';
+import liliana_image3 from './liliana-image3.webp';
+import liliana_image4 from './liliana-image4.webp';
 import work_vanderlande from './work-vanderlande.webp';
-import vanderlande_image1 from './vanderlande-image1.png';
-import vanderlande_image2 from './vanderlande-image2.png';
-import vanderlande_image3 from './vanderlande-image3.png';
-import vanderlande_image4 from './vanderlande-image4.png';
+import vanderlande_image1 from './vanderlande-image1.webp';
+import vanderlande_image2 from './vanderlande-image2.webp';
+import vanderlande_image3 from './vanderlande-image3.webp';
+import vanderlande_image4 from './vanderlande-image4.webp';
 import projects_smiski from './projects-smiski.svg';
 import arthur_popout from './arthur-popout4.png';
 import work_nathalie from './work-nathalie.webp';
-import nathalie_image1 from './nathalie-image1.png';
-import nathalie_image2 from './nathalie-image2.png';
-import nathalie_image3 from './nathalie-image3.png';
-import nathalie_image4 from './nathalie-image4.png';
+import nathalie_image1 from './nathalie-image1.webp';
+import nathalie_image2 from './nathalie-image2.webp';
+import nathalie_image3 from './nathalie-image3.webp';
+import nathalie_image4 from './nathalie-image4.webp';
 import construction from './under-construction.gif';
 import work_everythingmustgo from './work-everythingmustgo.webp';
-import everythingmustgo_image1 from './everythingmustgo-image1.png';
-import everythingmustgo_image2 from './everythingmustgo-image2.png';
-import everythingmustgo_image3 from './everythingmustgo-image3.png';
-import everythingmustgo_image4 from './everythingmustgo-image4.png';
+import everythingmustgo_image1 from './everythingmustgo-image1.webp';
+import everythingmustgo_image2 from './everythingmustgo-image2.webp';
+import everythingmustgo_image3 from './everythingmustgo-image3.webp';
+import everythingmustgo_image4 from './everythingmustgo-image4.webp';
 
 
 
@@ -105,19 +105,24 @@ export const assets = {
 export const workData = [
   {
     title: 'HeyYou',
-    image: './public/work-heyyou.jpg',
+    image: './public/work-heyyou.webp',
   },
     {   
     title: 'Boroughs',
-    image: './public/work-boroughs.jpg',
+    image: './public/work-boroughs.webp',
   },
   {
     title: 'Vanderlande Trend App',
-    image: './public/work-vanderlande.jpg',
+    image: './public/work-vanderlande.webp',
   },
   {
     title: 'Liliana Erasmus',
-    image: './public/work-liliana.jpg',
+    image: './public/work-liliana.webp',
+  },
+
+  {
+    title: 'Everything Must Go',
+    image: './public/work-everythingmustgo.webp',
   },
   
 ];
