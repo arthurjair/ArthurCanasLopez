@@ -111,6 +111,14 @@ export default function Projects() {
 
                                       
                                     </p>
+                                    <a
+                                      href="https://vanabbemuseum.nl/en/see-and-do/exhibitions/dommelplein/plug-play-studio-woensel-west"
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="inline-block bg-black text-white rounded-lg p-2 mt-5"
+                                    >
+                                      Check it out!
+                                    </a>
                                     
                                   </div>
                                 )}
