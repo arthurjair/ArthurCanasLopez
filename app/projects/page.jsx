@@ -71,7 +71,7 @@ export default function Projects() {
                             {[ 
                               { type: 'img', src: assets.work_everythingmustgo },
                               { type: 'img', src: assets.everythingmustgo_image1 },
-                              { type: 'text', title: 'Everything Must Go', subtitle: 'Website' },
+                              { type: 'text', title: 'Everything Must Go', subtitle: 'Frontend Development + Supabase + Website' },
                               { type: 'img', src: assets.everythingmustgo_image2 },
                               { type: 'img', src: assets.everythingmustgo_image3 },
                               { type: 'img', src: assets.everythingmustgo_image4 },
@@ -94,10 +94,28 @@ export default function Projects() {
                                     <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
                                     <h2 className="text-lg font-extralight mb-4">{item.subtitle}</h2>
                                     <p className="text-xl whitespace-pre-line">
-                                      Imagine if your crush actually knew you existed ...well, now they can! With HeyYou, you simply add one of their social media profiles, and the app gathers all their public information for you.{"\n\n"}
-                                      HeyYou started as a joke I made a semester earlier, but during my Smart Mobile semester, my teachers actually liked the concept. So my partner and I decided to make it real. The app collects publicly available online information and brings it together in one place, making it easier to get to know someone before they even know you.{"\n\n"}
-                                      Its meant to be a funny, satirical project that also raises awareness about how much personal information people share online and how easily accessible it really is.
+                                      In my Frontend Development semester, I learned how to work with React, Next.js, and Supabase. As part of the course, we were assigned to create a fake webshop.{"\n\n"}
+
+                                     After finishing the assignment, I started thinking: why not take this project and completely redesign it for Project X? {"\n\n"}
+
+                                     That's exactly what I did.{"\n\n"}
+
+                                     My biggest inspiration came from FISK Project's "ALL SHIRTS MUST GO" aesthetic, with its bright colors, oversized typography, and bold visual language. From there, I researched magazine and catalog designs from the 2000s, looking for recurring patterns and graphic elements that I could incorporate into my own work.
+
+                                     To push the concept even further, I also drew inspiration from Chinese webshop interfaces, adding playful and sometimes overwhelming popup elements to create a more chaotic and attention-grabbing shopping experience.{"\n\n"}
+
+                                     I built this website in just three weeks after getting a late start on Project X, but I genuinely enjoyed every part of the process. Seeing it finally go live feels incredibly rewarding.{"\n\n"}
+
+                                     While you can't actually buy anything, the website is all about exploring the concept and the visual experience. so feel free to check it out!
                                     </p>
+                                    <a
+                                      href="https://every-thing-must-go.vercel.app/"
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="inline-block bg-black text-white rounded-lg p-2 mt-5"
+                                    >
+                                      Check it out!
+                                    </a>
                                   </div>
                                 )}
                               </div>
