@@ -64,14 +64,71 @@ export default function Projects() {
 
                     </div>
 
-                    <div id="EverythingMustGo" className='EverythingMustGo p-5'>
+                    <div id="vanderlande" className='Vanderlande p-5'>
+                        <div className="flex overflow-visible items-start gap-8">
+                        <div className="flex-1">
+                          <div className="columns-1 sm:columns-2 lg:columns-2 xl:columns-3 gap-6 ">   
+                            {[
+
+                              { type: 'text', title: 'Moppuccino', subtitle: 'Artwork + Van Abbe Museum Exhibition 2026' },
+                              
+                              
+                              { type: 'img', src: assets.work_sww },
+                              { type: 'img', src: assets.sww_image3 },
+                              { type: 'img', src: assets.sww_image4 },
+                              { type: 'img', src: assets.sww_image2 },
+                              
+                              
+                            ].map((item, i) => (
+                              <div
+                                key={i}
+                                className="mb-4 break-inside-avoid w-full pb-3"
+                                onMouseEnter={() => item.type === 'img' && preloadImage(item.src)} // start preloading on hover
+                              >
+                                {item.type === 'img' ? (
+                                  <Image
+                                    src={item.src}
+                                    alt={`work-${i}`}
+                                    width={600}
+                                    height={900}
+                                    className="w-full h-auto rounded-lg shadow transition-opacity duration-500"
+                                  />
+                                ) : (
+                                  <div className=" w-full rounded-lg bg-white p-6 shadow-[-10px_10px_0_rgba(0,0,0,1)] border-0">
+                                    <h1 className="text-5xl font-bold mb-4">{item.title}</h1>
+                                    <h2 className="text-lg thin text-gray-800 mb-4">{item.subtitle}</h2>
+                                    <p className="text-xl whitespace-pre-line">
+                                      During the spring semester, I joined the workshops at Studio Woensel West, a creative studio in Eindhoven for young creatives. Alongside my Minor, I wanted a space to keep creating, meet new people, and connect with the local creative community.{"\n\n"}
+
+                                      The workshops were connected to an exhibition at the Van Abbemuseum, where we were asked to create a project around the theme of Time. After a workshop focused on nostalgic objects and personal memories, I became interested in storytelling and developed concepts inspired by the stories shared within the group.{"\n\n"}
+
+                                      For my personal project, I chose to focus on my late dog, Cappuccino. I created a short audio story about him and built a physical artwork called Moppuccino, inspired by a family joke where my mother would jokingly call him a mop whenever he lay in the way while she was cleaning. Using actual mop heads, I turned that memory into a playful tribute.{"\n\n"}
+
+                                      Seeing the work exhibited at the Van Abbemuseum was a rewarding experience. The project pushed me outside my comfort zone, as I usually work in digital and graphic design rather than physical making, but it became one of the most meaningful creative projects I have worked on.{"\n\n"}
+
+
+
+
+                                      
+                                    </p>
+                                    
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="EverythingMustGo" className='Everything Must Go p-5'>
                       <div className="flex overflow-visible items-start gap-8">
                         <div className="flex-1">
                           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 ">   
                             {[ 
                               { type: 'img', src: assets.work_everythingmustgo },
                               { type: 'img', src: assets.everythingmustgo_image1 },
-                              { type: 'text', title: 'Everything Must Go', subtitle: 'Frontend Development + Supabase + Website' },
+                              { type: 'text', title: 'Everything Must Go', subtitle: 'Frontend Development 2026 + Supabase + Website ' },
                               { type: 'img', src: assets.everythingmustgo_image2 },
                               { type: 'img', src: assets.everythingmustgo_image3 },
                               { type: 'img', src: assets.everythingmustgo_image4 },

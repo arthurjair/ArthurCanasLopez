@@ -47,6 +47,11 @@ import everythingmustgo_image1 from './everythingmustgo-image1.webp';
 import everythingmustgo_image2 from './everythingmustgo-image2.webp';
 import everythingmustgo_image3 from './everythingmustgo-image3.webp';
 import everythingmustgo_image4 from './everythingmustgo-image4.webp';
+import work_sww from './work-sww.webp';
+import sww_image1 from './sww-image1.webp';
+import sww_image2 from './sww-image2.webp';
+import sww_image3 from './sww-image3.webp';
+import sww_image4 from './sww-image4.webp';
 
 
 
@@ -100,6 +105,11 @@ export const assets = {
   nathalie_image3,
   nathalie_image4,
   construction,
+  work_sww,
+  sww_image1,
+  sww_image2,
+  sww_image3,
+  sww_image4,
 };
 
 export const workData = [
@@ -124,5 +134,11 @@ export const workData = [
     title: 'Everything Must Go',
     image: './public/work-everythingmustgo.webp',
   },
+
+  {
+    title: 'SWW',
+    image: './public/work-sww.webp',
+  },
+
   
 ];
