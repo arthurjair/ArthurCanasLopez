@@ -116,7 +116,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-48%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
@@ -189,11 +189,12 @@ const MobileCard = ({ card }) => {
 export default Recentworks;
 
 const cards = [
-  { url: "/work-everythingmustgo.webp", title: "Everything Must Go", id: 1, target: "EMG" },
-  { url: "/work-heyyou.webp", title: "HeyYou", id: 2, target: "heyyou" },
-  { url: "/work-boroughs.webp", title: "Boroughs", id: 3, target: "boroughs" },
-  { url: "/work-liliana.webp", title: "Liliana", id: 4, target: "liliana" },
-  { url: "/work-vanderlande.webp", title: "Vanderlande", id: 5, target: "vanderlande" },
-  { url: "/work-nathalie.webp", title: "Nathalie", id: 6, target: "nathalie" },
+  { url: "/work-sww.webp", title: "Mopuccino", id: 1, target: "SWW" },
+  { url: "/work-everythingmustgo.webp", title: "Everything Must Go", id: 2, target: "EMG" },
+  { url: "/work-heyyou.webp", title: "HeyYou", id: 3, target: "heyyou" },
+  { url: "/work-boroughs.webp", title: "Boroughs", id: 4, target: "boroughs" },
+  { url: "/work-liliana.webp", title: "Liliana", id: 5, target: "liliana" },
+  { url: "/work-vanderlande.webp", title: "Vanderlande", id: 6, target: "vanderlande" },
+  { url: "/work-nathalie.webp", title: "Nathalie", id: 7, target: "nathalie" },
   
 ];
