@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li >
                 <a
-                  href="https://www.linkedin.com/in/arthur-cañas-11271b328"
+                  href="https://www.linkedin.com/in/arthur-cañas-lopez-11271b328"
                   className="inline-block hover:scale-110 hover:-translate-y-1 hover:text-blue-600 transition-all duration-300 ease-out text-[#F7FD06]"
                   target="_blank"
                   rel="noreferrer"
